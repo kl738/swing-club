@@ -21,8 +21,8 @@
     </header>
 
     <div class="jumbotron text-center">
-        <h1>Cornell Swing Dance</h1>
-        <p>Aimed on perfection</p>
+        <h1>Cornell Swing Dance Club</h1>
+        <p></p>
     </div>
 
     <!-- Container (About Section) -->
@@ -30,10 +30,8 @@
         <div class="row">
             <div class="col-sm-8">
                 <h2>Who are we?</h2><br>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur
-                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h4>Welcome to our site! We are Cornell University's Swing Dance Club. We all love dancing, and we're excited to share our passion for swing with everyone.
+                <p>Swing dancing is a fun, energetic social activity for all ages. The Cornell Swing Dance Club is dedicated to promoting the dances of the Jazz Era of the early 20th century by holding regular lessons and social dances. Every semester, there are also a few big dances featuring Cornell's very own CU Jazz Band and the newly formed Syncopators.</p>
             </div>
             <div class="col-sm-4">
                 <img src="images/cornell_logo.gif" class="img-responsive float-right" width="250" height="250">
@@ -52,18 +50,34 @@
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    <li data-target="#myCarousel" data-slide-to="6"></li>
                 </ol>
 
                 
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <h4>Q: "How can I join this amazing club?"<br><br><span>A: Submit an application form to us today!</span></h4>
+                        <h4>Q: When are the classes?<br><br><span>A: We teach classes every Thursday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</span></h4>
                     </div>
                     <div class="item">
-                        <h4>"One word... WOW!!"<br><br><span>John Doe, Salesman, Rep Inc</span></h4>
+                        <h4>Q: Where are the classes?<br><br><span>A: The classes take place in the 5th floor dance room in Willard Straight Hall.</span></h4>
                     </div>
                     <div class="item">
-                        <h4>"Could I... BE any more happy with this company?"<br><br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+                        <h4>Q: I'm a complete beginner and have never ever danced in my life. Can I join?<br><br><span>A: Of course! We are open to dancers of all levels, and are very excited when beginners want to learn. </span></h4>
+                    </div>
+                    <div class="item">
+                        <h4>Q: Do I need a partner?<br><br><span></span>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </h4>
+                    </div>
+                    <div class="item">
+                        <h4>Q: How much do classes cost?<br><br><span></span>A: The classes we each every Thursday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</h4>
+                    </div>
+                    <div class="item">
+                        <h4>Q: What should I wear to swing dance?<br><br><span></span>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber soles as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </h4>
+                    </div>
+                    <div class="item">
+                        <h4>Q: Are there any big dances?<br><br><span></span>A: Yes! We hold a few big dances every semester. Dancers with no experience are encouraged to come as well. We will hold free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</h4>
                     </div>
                 </div>
 
@@ -83,43 +97,8 @@
 
     <div id="events" class="container-fluid text-center">
         <h2>EVENTS</h2>
-        <h4>What we offer</h4>
+        <h4>We hold weekly club meetings on the 5th floor dance space in Willard Straight Hall. Lessons are every Thursday from 7-8pm, and afterwards there will be an open dance from 8-9pm</h4>
         <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-off logo-small"></span>
-                <h4>POWER</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-heart logo-small"></span>
-                <h4>LOVE</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-lock logo-small"></span>
-                <h4>JOB DONE</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-        </div>
-        <br><br>
-        <div class="row">
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-leaf logo-small"></span>
-                <h4>GREEN</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-certificate logo-small"></span>
-                <h4>CERTIFIED</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-wrench logo-small"></span>
-                <h4 style="color:#303030;">HARD WORK</h4>
-                <p>Lorem ipsum dolor sit amet..</p>
-            </div>
-        </div>
     </div>
 
 
