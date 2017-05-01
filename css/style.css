@@ -24,14 +24,11 @@ h4 {
     margin-bottom: 30px;
     text-align: left;
 }
-p{
+p, li, a{
     text-align: left;
     color: #303030;
 }
-li{
-    text-align: left;
-    color: #303030;
-}
+
 
 .jumbotron {
     background-color: #b31b1b;

@@ -4,10 +4,17 @@ $footer = '
             <h2 class="text-center">CONTACT</h2>
             <div class="row">
                 <div class="col-sm-5">
-                    <p>Contact us and we will get back to you within 24 hours.</p>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-                    <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-                    <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+                    <p>Site Map</p>
+                    <a href="index.php">Home</a><br>
+                    <a href="#">E-board members</a><br>
+                    <a href="#">History</a><br>
+                    <a href="#">Code of Etiquette</a><br>
+                    <a href="#">FAQ</a><br>
+                    <a href="#">Calendar</a><br>
+                    <a href="#">Class</a><br>
+                    <a href="gallery.php">Gallery</a><br>
+                    <a href="#">Suggestion</a><br>
+                    <a href="#">Contact Info</a><br>
                 </div>
                 <div class="col-sm-7 slideanim">
                     <div class="row">
