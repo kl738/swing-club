@@ -31,7 +31,7 @@
                         <li><a href="#">Suggestion</a></li>
                         <li><a href="#">Contact Info</a></li>
                         </ul>
-                    </li>"
+                    </li>
                     <?php if(isset($_SESSION["user"])){?>
     
                     <li><a href="logout.php">LOGOUT</a></li>
