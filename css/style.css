@@ -86,7 +86,6 @@ h4 {
 .panel {
     border: 1px solid #b31b1b;
     border-radius: 0 !important;
-    transition: box-shadow 0.5s;
 }
 
 .panel:hover {
@@ -148,7 +147,7 @@ h4 {
 
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
-    color: #b31b1b !important;
+    color: #b31b1b;
     background-color: #fff !important;
 }
 
@@ -165,18 +164,6 @@ footer .glyphicon {
 
 footer {
     background-color: #b31b1b;
-}
-
-.slideanim {
-    visibility: hidden;
-}
-
-.slide {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
 }
 
 @keyframes slide {
