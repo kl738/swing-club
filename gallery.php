@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,17 @@
 
 <body id="myPage">
     <?php require_once 'php/nav.php'; echo $nav?>
+    <?php 
+    require_once 'php/config.php'; 
+    $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+    
+    
+    //To display edit 
+    //if(isset($_SESSION['user'])){}
+    
+    
+    
+    ?>
     
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>
