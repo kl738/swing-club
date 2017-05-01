@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 </head>
 
 <body id="myPage">
-    <?php require_once 'php/nav.php'; echo $nav?>
+    <?php include 'php/nav.php'; ?>
 
     <header class="clearfix" style="height: 70vh; background: url(images/theme_pic.png) 
     no-repeat center center; background-size: cover; margin-bottom: 0px;">

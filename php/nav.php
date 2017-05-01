@@ -1,5 +1,4 @@
-<?php
-$nav = '
+
 		<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -32,10 +31,21 @@ $nav = '
                         <li><a href="#">Suggestion</a></li>
                         <li><a href="#">Contact Info</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#admin">ADMIN LOGIN</a></li>
+                    </li>"
+                    <?php if(isset($_SESSION["user"])){?>
+    
+                    <li><a href="logout.php">Logout</a></li>
+    
+                    <?php }else{ ?>
+    
+    
+                    <li><a href="login.php">Login</a></li>
+                    <?php } ?>
+                    
+                    
                 </ul>
             </div>
         </div>
-    </nav>'
+    </nav>
 ?>
+
