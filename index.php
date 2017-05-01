@@ -25,7 +25,6 @@
         <p></p>
     </div>
 
-    <!-- Container (About Section) -->
     <div id="about" class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
