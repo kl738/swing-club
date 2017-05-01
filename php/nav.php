@@ -13,23 +13,23 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ABOUT<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        <li><a href="#">E-board members</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Code of Etiquette</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="eboard.php">E-board members</a></li>
+                        <li><a href="history.php">History</a></li>
+                        <li><a href="codeofet.php">Code of Etiquette</a></li>
+                        <li><a href="faq.php">FAQ</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">EVENT<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Class</a></li>
+                        <li><a href="calendar.php">Calendar</a></li>
+                        <li><a href="class.php">Class</a></li>
                         </ul>
                     </li>
                     <li><a href="gallery.php">GALLERY</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CONTACT<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        <li><a href="#">Suggestion</a></li>
-                        <li><a href="#">Contact Info</a></li>
+                        <li><a href="suggestion.php">Suggestion</a></li>
+                        <li><a href="contactinfo.php">Contact Info</a></li>
                         </ul>
                     </li>
                     <?php if(isset($_SESSION["user"])){?>
