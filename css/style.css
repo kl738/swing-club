@@ -11,13 +11,26 @@ h2 {
     font-weight: 600;
     margin-bottom: 30px;
 }
-
+h3{
+    font-weight: 600;
+    color: #303030;
+    text-align: left;
+}
 h4 {
     font-size: 19px;
     line-height: 1.375em;
     color: #303030;
     font-weight: 400;
     margin-bottom: 30px;
+    text-align: left;
+}
+p{
+    text-align: left;
+    color: #303030;
+}
+li{
+    text-align: left;
+    color: #303030;
 }
 
 .jumbotron {
@@ -210,4 +223,7 @@ footer {
     .logo {
         font-size: 150px;
     }
+}
+p{
+    text-align: left;
 }

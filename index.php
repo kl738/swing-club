@@ -30,7 +30,7 @@
             <div class="col-sm-8">
                 <h2>Who are we?</h2><br>
                 <h4>Welcome to our site! We are Cornell University's Swing Dance Club. We all love dancing, and we're excited to share our passion for swing with everyone.
-                <p>Swing dancing is a fun, energetic social activity for all ages. The Cornell Swing Dance Club is dedicated to promoting the dances of the Jazz Era of the early 20th century by holding regular lessons and social dances. Every semester, there are also a few big dances featuring Cornell's very own CU Jazz Band and the newly formed Syncopators.</p>
+                Swing dancing is a fun, energetic social activity for all ages. The Cornell Swing Dance Club is dedicated to promoting the dances of the Jazz Era of the early 20th century by holding regular lessons and social dances. Every semester, there are also a few big dances featuring Cornell's very own CU Jazz Band and the newly formed Syncopators.</h4>
             </div>
             <div class="col-sm-4">
                 <img src="images/cornell_logo.gif" class="img-responsive float-right" width="250" height="250">
@@ -96,8 +96,27 @@
 
     <div id="events" class="container-fluid text-center">
         <h2>EVENTS</h2>
-        <h4>We hold weekly club meetings on the 5th floor dance space in Willard Straight Hall. Lessons are every Thursday from 7-8pm, and afterwards there will be an open dance from 8-9pm</h4>
-        <br>
+        <h3>CLASSES</h3>
+        <p>We hold weekly club meetings on the 5th floor dance space in Willard Straight Hall. Lessons are every Thursday from 7-8pm, and afterwards there will be an open dance from 8-9pm.</p>
+        <h3>DANCES</h3>
+        <p>Friday, May 12, 2017. Join the Cornell Swing Dance Club for a night of dancing, fun, and all that jazz!
+        This is CSDC's final dance of the year and we are joined by our very own CU Jazz Band! All of our dances are fun, but this one especially. Imagine a dimly lit room, a jazz band jamming, and your closest friends dancing like it don't mean a thing if it ain't got that swing. </p>
+
+        <p>Don't know how to dance? No problem. We will have a beginner LESSON at the beginning to teach you the very basics and make sure you have a good time.
+
+        Like to compete? Got you covered. We will have a Jack and Jill swing dance (Lindy Hop) competition! All levels are welcome to enter. Everyone will be randomly paired with a partner and dance for glory, honor, and PRIZES.</p>
+
+        <p>Attire is as jazzy, dapper, and as comfortably as you'd like it to be. Snacks and refreshments will be provided.</p>
+
+       
+        <ul>
+          <li>Who: This event is open to the public ( students and non-students)</li>
+          <li>When: Friday, May 12th</li>
+          <li>Time: Lesson at 7pm. Dancing to live band from 8pm-10pm.</li>
+          <li>Where: Lincoln Hall B20</li>
+          <li>Parking: Available in the nearby Architecture Lot</li>
+          <li>Price: $7 for the non-students. $5 suggested donation for students. (Tickets avaiable at the door. Cash or venmo accepted).</li>
+        </ul>
     </div>
 
 
