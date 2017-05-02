@@ -52,6 +52,7 @@
                     print( "<span class = 'imgList'>Description: {$row[ 'description' ]}</span>" );
                     
                     if(isset($_SESSION['user'])){
+                        
 					    $href = "edit.php?nameEboard=$name";
                         print( "<span class = 'imgList'><a href='$href' title='$href'>Edit</a></span>" );
 					  
@@ -76,7 +77,7 @@
         <form method = "post" enctype="multipart/form-data">
             Name: <input type="text" name="name"> <br><br>
             
-            Year: <input type="text" name="year"> <br><br>
+            Year: <input type="number" min="1920" max="2030" name="year"> <br><br>
                 
             Description: <input type="text" name="description"> <br><br>  
                 
@@ -102,39 +103,69 @@
                 //add image to database
                 if(isset($_POST["submit"]) and !empty( $_FILES['newImage'])){
  
-				        $newImage = $_FILES['newImage'];
-				        $originalName = $newImage['name'];
+				        
+				    
+                
+                    $name = filter_input( INPUT_POST, 'name', FILTER_SANITIZE_STRING );
+                    $year = filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT);
+                    $description =  filter_input( INPUT_POST, 'description', FILTER_SANITIZE_STRING );
+                    $newImage = $_FILES['newImage'];
+				    $originalName = $newImage['name'];
+                    
+                    //check for empty value
+                    if(!empty($name)&&!empty($description)&&$year>=1920&&$year<=2030)
+                    {
+                        
+                    
 				    if ( $newImage['error'] == 0 ) {
       
 					   $tempName = $newImage['tmp_name'];
 					   move_uploaded_file($tempName, "images/$originalName");
 					
-					   print("<p>The file $originalName was uploaded successfully.</p>");
-                    
-                    }
-				    
-                
-                    $caption = filter_input( INPUT_POST, 'caption', FILTER_SANITIZE_STRING );
-                    
-                    $credit =  filter_input( INPUT_POST, 'credit', FILTER_SANITIZE_URL );
-                    
-                    //check for empty value
-                    if(!empty($name)&&!empty($description)&& $newImage['error'] == 0)
-                    {
+					   
                     
                     $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";               
-                    $sql .= "('$caption','$originalName','$credit')";
+                    $sql .= "('$name','$originalName','$name')";
                     $sql .= ";";
                     $mysqli->query($sql);
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
                    
+                    print("<p>The file $originalName was uploaded successfully.</p>");
+                    
                     }
+                        
+                    //Getting the photoID for creating an entry in Eboard
+                    $result = $mysqli->query("select * from Photo WHERE path = '$originalName'");
+                    
+                    if(mysql_errno())
+                        echo "MySQL error ".mysql_errno();
+                    
+                    $row = $result->fetch_assoc();
+                    $index = $row['photoID']; 
+                    
+                    $sql = "INSERT INTO EBoard (name, photoID, year, description) VALUES ";               
+                    $sql .= "('$name','$index','$year','$description')";
+                    $sql .= ";";
+                    $mysqli->query($sql);
+             
+                    if(mysql_errno())
+                        echo "MySQL error ".mysql_errno();
+                        
+                        
+                        
+                    }//Form verified ended
+                    
+                    
                     
                     else 
-					   print("<p>Error: The file $originalName was not uploaded.</p>");
-                    //insert the relation into the realtion database if there is any.
+					   print("<p>Error: The file $originalName was not uploaded due to invalid input.</p>");
+                    
+                    
+                    
+                    
+                    
                     
              
                 }

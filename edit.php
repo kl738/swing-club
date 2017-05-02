@@ -25,39 +25,102 @@
             include 'php/nav.php'; 
             require_once "php/config.php";
             $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-            $nameEboard = filter_input(INPUT_GET, 'eboard_name', FILTER_SANITIZE_STRING);
+            $nameEboard = filter_input(INPUT_GET, 'nameEboard', FILTER_SANITIZE_STRING);
             $numPhoto = filter_input(INPUT_GET, 'image_id', FILTER_SANITIZE_NUMBER_INT);
             if(isset($_SESSION['user'])){
             
+                 
+            if(!empty($nameEboard)) {
                 
-            /*editing eboard    
-            if(!empty($nameEboard)) {   
-            //update an album in database
+                $sql = 'SELECT EBoard.photoID, path, year, description, name FROM EBoard inner join Photo on EBoard.photoID = Photo.photoID WHERE name = ?;';
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('s', $nameEboard);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+                $row = $result->fetch_assoc();
+                $year = $row['year'];
+                $description = $row['description'];
+                $name =$row[ 'name' ];  
+                $photoID = $row[ 'photoID' ]; 
+                
+            print("<div class = imgDiv>");
+            print("<form method = 'post' enctype='multipart/form-data'>");
+                
+			 
+            
+            print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+                
+            
+            print "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>";
+			print "Year: <input type='number' min = '1920' max = '2030' name='year' value = '$year'> <br><br>";
+                    
+            print "Description: <input type='text' name='description' value = '$description'> <br><br>";
+                
+              
+            print "<p>";
+				print "<label>Image upload(leave blank if no changes): </label>";
+				print "<input id='newImage' type='file' name='newImage' accept='.jpg, .jpeg, .png'>";
+				
+			print "</p>";
+                
+            print "<input type = 'submit' name = 'save' value = 'Save'>";
+                
+            print("</form>");
+            print("</div>");
+                
+                
+            
             if(isset($_POST["save"])){
                 
                 //datafield
-                $post_title = filter_input( INPUT_POST, 'title', FILTER_SANITIZE_STRING );
-                $post_note = filter_input( INPUT_POST, 'note', FILTER_SANITIZE_STRING );
-               
+                $post_year = filter_input( INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT );
+                $post_description = filter_input( INPUT_POST, 'description', FILTER_SANITIZE_STRING );
                 
                 
-                //check for empty value
-                if(!empty($post_title)){
                 
-                    $sql = "Update Album Set title =? , note = ?, date_modified = now() WHERE albumID = $numAlbum ";
+                //check for empty value+ change text&num datafield
+                if(!empty($post_year)&&!empty($post_description)){
+                
+                    $sql = "Update EBoard Set year =? , description = ? WHERE name ='$nameEboard' ";
                     $stmt = $mysqli->stmt_init();
                     if($stmt->prepare($sql)){
-                        $stmt->bind_param('ss', $post_title, $post_note);
+                        $stmt->bind_param('is', $post_year, $post_description);
                         $stmt->execute();
                         $result = $stmt->get_result();
                     
                     }
+                    
+                    //change photo if uploaded
+                   
+                    
+                    if($_FILES['newImage']['error']!=UPLOAD_ERR_NO_FILE){
+                        
+                        $newImage = $_FILES['newImage'];
+				        $originalName = $newImage['name'];
+                        $tempName = $newImage['tmp_name'];
+					    move_uploaded_file($tempName, "images/$originalName");
+                        
+                       
+                        
+                        $sql = "Update Photo Set path='$originalName' WHERE photoID = $photoID;";
+                        $mysqli->query($sql);
+                        }
+                        
+                        
+                        
+                    
+                    
+                    
+                    
                     print "Changes have been saved.";
                     
                 }
                 
                 else{
-                    print "Please enter a change for your album!";
+                    print "Please enter a change for your EBoard member! Nothing except image can be blank";
                 }
             
             
@@ -67,30 +130,12 @@
                 
                 
             // displaying a form for user the enter input.    
-                $sql = 'SELECT * FROM Album WHERE albumID = ?;';
-                $stmt = $mysqli->stmt_init();
-                if($stmt->prepare($sql)){
-                    $stmt->bind_param('i', $numAlbum);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    
-                }
-             
-            print("<form method = 'post'>");
-                
-			$row = $result->fetch_assoc();
-			$title = $row['title'];
-            $note = $row['note'];
-			print "Album Title: <input type='text' name='title' value = '$title'> <br><br>";
-                    
-            print "Note: <input type='text' name='note' value = '$note'> <br><br>";
-                
-            print "<input type = 'submit' name = 'save' value = 'Save'>";      
-            print("</form>");
             
-            }//close of !empty($numAlbum)
+                
             
-            end of edit eboard*/
+            }
+            
+           
             
 // editing image    
             if(!empty($numPhoto)){

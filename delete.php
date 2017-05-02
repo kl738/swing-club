@@ -25,56 +25,58 @@
             include 'php/nav.php'; 
             require_once "php/config.php";
             $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-            $nameEboard = filter_input(INPUT_GET, 'eboard_name', FILTER_SANITIZE_STRING);
+            $nameEboard = filter_input(INPUT_GET, 'nameEboard', FILTER_SANITIZE_STRING);
             $numPhoto = filter_input(INPUT_GET, 'image_id', FILTER_SANITIZE_NUMBER_INT);
             $numSugg = filter_input(INPUT_GET, 'image_id', FILTER_SANITIZE_NUMBER_INT);
             
+            echo "<p>$nameEboard</p>";
             
             if(isset($_SESSION['user'])){
             
                 
-            /*For deleting eboard  
-            if(!empty($numAlbum)){    
-            $sql = 'SELECT * FROM Album WHERE albumID = ?;';
+              
+            if(!empty($nameEboard)){    
+            $sql = 'SELECT * FROM EBoard WHERE name = ?;';
                 $stmt = $mysqli->stmt_init();
                 if($stmt->prepare($sql)){
-                    $stmt->bind_param('i', $numAlbum);
+                    $stmt->bind_param('s', $nameEboard);
                     $stmt->execute();
                     $result = $stmt->get_result();
                     
                 }
             $row = $result->fetch_assoc();
-            $title = $row['title'];
+            $name = $row['name'];
+            $photo = $row['photoID'];
             
             // code for deleting album when the user presses yes!
                 if(isset($_POST['delete'])){
                     
-                    //delete the album from Album table
-                    $sql = "Delete from Album WHERE albumID = $numAlbum ;";
+                    //delete the member from EBoard table
+                    $sql = "Delete from EBoard WHERE name = $name ;";
                     $mysqli->query($sql);
                     
-                    //delete the album relation in the Relation table
-                    $sql = "Delete from Relation WHERE albumID = $numAlbum ;";
+                    //delete the photo of the member
+                    $sql = "Delete from Photo WHERE photoID = $photo ;";
                     $mysqli->query($sql);
                 
-                    print "Album titled '$title' has been successfully deleted!";
+                    print "EBoard member '$name' has been successfully deleted!";
                 
                 }    
                 
                 
                 
                 else{    
-                    print "<h3>Are you sure you want to delete album titled '$title'?</h3>";
+                    print "<h3>Are you sure you want to delete album titled '$name'?</h3>";
                     print "<form method = 'post'>";
                     print "<input type = 'submit' name = 'delete' value = 'Yes, please delete it immediately!'>";
                     print "</form>";
-                    print "<h3>If you don't want to delete this album, you can simply just leave this page.</h3>";
+                    print "<h3>If you don't want to delete this member, you can simply just leave this page.</h3>";
                 }
                     
                     
           
                 
-            } the close of deleting eboard */
+            } 
                 
 //To delete an image
                 if (!empty($numPhoto)){
@@ -102,7 +104,7 @@
                     print "<form method = 'post'>";
                     print "<input type = 'submit' name = 'delete' value = 'Yes, please delete it immediately!'>";
                     print "</form>";
-                    print "<h3>If you don't want to delete this image, you can simply just leave this page.</h3>";
+                    print "<h3>If you don't want to delete this photo, you can simply just leave this page.</h3>";
                 }
                     
                     
