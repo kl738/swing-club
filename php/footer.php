@@ -1,7 +1,7 @@
 
         <div class="footer">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h4>Site Map</h4>
                     <ul>
                         <li><a href="index.php">Home</a></li>
@@ -18,27 +18,22 @@
 
                     </ul>
                 </div>
-                <div class="col-sm-3">
+              
+                <div class="col-sm-4">
                     <h4>Links</h4>
-                    <ul>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h4>Social Media</h4>
                     <ul>
                         <li><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h4>Join the Mailing List</h4>
                     <form action="" method="post" id="mailinglist" name="mailinglist" class="validate" >
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" id="name" value="" tabindex="1" required />
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name" value="" tabindex="1" required /><br>
 
 
-                        <label for="name">Email:</label>
-                        <input type="text" name="email" id="email" value="" tabindex="1" required />
+                        <label for="name">Email:</label><br>
+                        <input type="text" name="email" id="email" value="" tabindex="1" required /><br><br>
                         
 
                         <input type="submit" value="Submit" class="button" />
