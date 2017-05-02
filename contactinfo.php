@@ -29,6 +29,7 @@
     ?>
     <div class="container-fluid">
         <h1>Contact Info</h1>
+        <p>Feel free to reach out to us at club meetings, <a href="https://www.facebook.com/groups/2370182392/">Facebook</a>, or email.</p>
     </div>
     <footer id="footer" class="container-fluid text-center">
         <?php include 'php/footer.php'; ?>
