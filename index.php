@@ -150,7 +150,7 @@
     </div>
 
     <footer id="footer" class="container-fluid text-center">
-        <?php require_once 'php/footer.php'; echo $footer?>
+        <?php include 'php/footer.php'; ?>
     </footer>
 
 
