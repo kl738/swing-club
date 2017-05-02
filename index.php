@@ -105,7 +105,7 @@
     </div>
 
    <!--  TODO: here we'll query the Photo database to display three random images. placeholder images are set for now. 
-    Very similar to gallery.  -->
+    Very similar to the query in gallery.php except for the limit of 3.  -->
     <div id="gallery" class="container-fluid text-center bg-grey">
         <h2>GALLERY</h2><br>
         <div class="row text-center">
