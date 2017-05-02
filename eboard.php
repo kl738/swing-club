@@ -74,8 +74,11 @@
         
         <h1>Add E-Board Members</h1>
         <form method = "post" enctype="multipart/form-data">
+            Name: <input type="text" name="name"> <br><br>
             
+            Year: <input type="text" name="year"> <br><br>
                 
+            Description: <input type="text" name="description"> <br><br>  
                 
             <p>
 				<label>Image upload: </label>
@@ -116,6 +119,7 @@
                     $credit =  filter_input( INPUT_POST, 'credit', FILTER_SANITIZE_URL );
                     
                     //check for empty value
+                    if(!empty($name)&&!empty($description)&& $newImage['error'] == 0)
                     {
                     
                     $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";               
