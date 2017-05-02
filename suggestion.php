@@ -29,6 +29,11 @@
     ?>
     <div class="container-fluid">
         <h1>Suggestions</h1>
+        <p>Please enter your suggestions for the Swing Dance Club here. Suggestions will be anonymous, and we will take them into consideration for making the club more enjoyable for everyone.</p>
+        <form>
+             <textarea rows="2" cols="25" placeholder="This is the default text" class="suggestionbox" required></textarea><br>
+             <input type="submit" value="Submit" class="button" />
+        </form>
     </div>
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>

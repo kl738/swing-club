@@ -34,6 +34,10 @@ ul, li {
     margin:0;
     padding:0;
 }
+.suggestionbox{
+    height: 300px;
+    width: 100%;
+}
 .jumbotron {
     background-color: #b31b1b;
     color: #fff;
