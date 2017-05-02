@@ -24,7 +24,9 @@
     //if(isset($_SESSION['user'])){}
     
     ?>
+
         <div id="calendar" class="container-fluid text-center">
+            <h1>Calendar of Events</h1>
             <iframe src="https://calendar.google.com/calendar/embed?src=cornell.edu_5j7aiojrga961lq77qp9jfpvec%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
         <footer id="footer" class="container-fluid text-center">

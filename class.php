@@ -27,7 +27,9 @@
     
     
     ?>
-    
+    <div class="container-fluid">
+        <h1>Class</h1>
+    </div>
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>
     </footer>
