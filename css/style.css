@@ -38,6 +38,29 @@ ul, li {
     height: 300px;
     width: 100%;
 }
+.imgDiv{
+    padding-top: 20px;
+    vertical-align: top;
+    width: 35%;
+    padding-left: 30px;
+    display: inline-block;
+    text-align: center;
+    
+    
+}
+
+.img {
+    width: 300px;
+    height: 200px;
+    padding: 1px;
+    background-color: grey;
+    border: 3px solid cadetblue;
+}
+.imgList {
+    
+    display: block;
+}
+
 .jumbotron {
     background-color: #b31b1b;
     color: #fff;
