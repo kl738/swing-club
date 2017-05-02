@@ -1,10 +1,8 @@
-<?php
-$footer = '
-        <div id="contact" class="container-fluid">
-            <h2 class="text-center">CONTACT</h2>
+
+        <div id="footer">
             <div class="row">
-                <div class="col-sm-5">
-                    <p>Site Map</p>
+                <div class="col-sm-3">
+                    <h4>Site Map</h4>
                     <a href="index.php">Home</a><br>
                     <a href="#">E-board members</a><br>
                     <a href="#">History</a><br>
@@ -16,22 +14,14 @@ $footer = '
                     <a href="#">Suggestion</a><br>
                     <a href="#">Contact Info</a><br>
                 </div>
-                <div class="col-sm-7">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                        </div>
-                    </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <button class="btn btn-default pull-right" type="submit">Send</button>
-                        </div>
-                    </div>
+                <div class="col-sm-3">
+                    <h4>Links</h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Social Media</h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Join the Mailing List</h4>
                 </div>
             </div>
-        </div>'
-?>
+        </div>
