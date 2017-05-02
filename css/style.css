@@ -205,6 +205,12 @@ ul, li {
     color: #fff !important;
 }
 
+.button{
+    background-color: #b31b1b;
+    color: #fff;
+    border: solid;
+}
+
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
