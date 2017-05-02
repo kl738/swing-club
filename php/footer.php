@@ -28,11 +28,11 @@
                 <div class="col-sm-4">
                     <h4>Join the Mailing List</h4>
                     <form action="" method="post" id="mailinglist" name="mailinglist" class="validate" >
-                        <label for="name">Name:</label><br>
+                        Name:<br>
                         <input type="text" name="name" id="name" value="" tabindex="1" required /><br>
 
 
-                        <label for="name">Email:</label><br>
+                       Email:<br>
                         <input type="text" name="email" id="email" value="" tabindex="1" required /><br><br>
                         
 
