@@ -3,7 +3,9 @@ body {
     line-height: 1.8;
     color: #818181;
 }
-
+h1{
+    color: #303030;
+}
 h2 {
     font-size: 24px;
     text-transform: uppercase;

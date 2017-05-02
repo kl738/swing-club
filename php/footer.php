@@ -16,7 +16,7 @@ $footer = '
                     <a href="#">Suggestion</a><br>
                     <a href="#">Contact Info</a><br>
                 </div>
-                <div class="col-sm-7 slideanim">
+                <div class="col-sm-7">
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
