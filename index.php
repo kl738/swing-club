@@ -23,7 +23,7 @@
 
     <div class="jumbotron text-center">
         <h1>Cornell Swing Dance Club</h1>
-        <p></p>
+        <br>
     </div>
 
     <div id="about" class="container-fluid">
