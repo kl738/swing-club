@@ -106,45 +106,23 @@
                     if(!empty($caption)&&!empty($credit)&& $newImage['error'] == 0)
                     {
                     
-                    $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";
-                
-                    
+                    $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";               
                     $sql .= "('$caption','$originalName','$credit')";
                     $sql .= ";";
                     $mysqli->query($sql);
-                    
-                   
-                    
+             
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
-                    
-                    
-                    
-                    
-                    
+                   
                     }
                     
                     else 
 					   print("<p>Error: The file $originalName was not uploaded.</p>");
                     //insert the relation into the realtion database if there is any.
                     
-                   
-                    
-                        
-            
-                
+             
                 }
-                
-                
-				
-
-                
-                
-        
-        
-        
-        
-        
+ 
         ?>
     
     </div>
