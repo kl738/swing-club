@@ -199,6 +199,7 @@ footer ul{
 }
 footer form{
     color: #fff;
+    text-align: left;
 }
 @keyframes slide {
     0% {
