@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <h1>E-Board Members</h1>
     </div>
-    <footer>
+    <footer id="footer" class="container-fluid text-center">
         <?php include 'php/footer.php'; ?>
     </footer>
 
