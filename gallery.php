@@ -21,8 +21,40 @@
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
     
     
-    //To display edit options
-    //if(isset($_SESSION['user'])){}
+    $sql = 'SELECT * FROM Photo ;';
+                   
+            
+            $result = $mysqli->query($sql);
+            while ($row = $result->fetch_assoc()) {
+				    
+                    print("<div class = imgDiv>");
+                    
+                    $index = $row['photoID'];
+                    
+			        print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+                    
+                    if(isset($_SESSION['user'])){
+					    $href = "edit.php?image_id=$index";
+                        print( "<span class = 'imgList'><a href='$href' title='$href'>Edit</a></span>" );
+					  
+                        $href = "delete.php?image_id=$index";
+                        print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");
+                        
+                        
+                    }         
+  		
+				    print("</div>"); 
+            }
+    
+    
+    
+    //form for add photo
+    if(isset($_SESSION['user'])){
+        
+        
+    }
+    
+   
     
     
     
