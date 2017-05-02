@@ -36,9 +36,39 @@
                         <input type="text" name="email" id="email" value="" tabindex="1" required /><br><br>
                         
 
-                        <input type="submit" value="Submit" class="button" />
+                        <input type="submit" value="Submit" class="button"  />
                         
                     </form>
                 </div>
+                <?php
+        
+                if(!empty($_POST['name'])&&!empty($_POST['email'])&&isset($_POST['submit'])) {  
+            
+                $name = filter_input( INPUT_POST, 'name', FILTER_SANITIZE_STRING );
+                $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL );
+        
+        
+                $sql = "INSERT INTO Malinglist (email, name) VALUES ";               
+                    $sql .= "('$email', '$name')";
+                    $sql .= ";";
+                    $mysqli->query($sql);
+             
+                    if(mysql_errno())
+                        echo "MySQL error ".mysql_errno();
+                    else{
+                        print "<p>Thanks for subscripting to our mailing list!</p>";
+                    }
+                    
+                    
+                    //All email address and name will be stored into the database,
+                    
+                    
+                }
+                
+        
+        
+        
+        ?>
+                
             </div>
         </div>
