@@ -65,6 +65,7 @@
         
         <div  class="container-fluid">
             
+            <h1>Admin Login</h1>
             
             
             <?php 
@@ -117,7 +118,7 @@
     
     
     
-    
+
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>
     </footer>

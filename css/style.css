@@ -3,7 +3,9 @@ body {
     line-height: 1.8;
     color: #818181;
 }
-
+h1{
+    color: #303030;
+}
 h2 {
     font-size: 24px;
     text-transform: uppercase;
@@ -28,8 +30,10 @@ p, li, a{
     text-align: left;
     color: #303030;
 }
-
-
+ul, li {
+    margin:0;
+    padding:0;
+}
 .jumbotron {
     background-color: #b31b1b;
     color: #fff;
@@ -125,6 +129,7 @@ p, li, a{
     background-color: white !important;
 }
 
+
 .panel-footer h3 {
     font-size: 32px;
 }
@@ -181,8 +186,20 @@ footer .glyphicon {
 
 footer {
     background-color: #b31b1b;
+    color:#0000FF;
 }
-
+footer a{
+    color: #fff;
+}
+footer h4{
+    color: #fff;
+}
+footer ul{
+    list-style: none;
+}
+footer form{
+    color: #fff;
+}
 @keyframes slide {
     0% {
         opacity: 0;

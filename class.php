@@ -27,7 +27,11 @@
     
     
     ?>
-    
+    <div class="container-fluid">
+        <h1>Class</h1>
+        <h3>Every Thursday 7pm at Willard Straight Hall 5th floor.</h3>
+        <p>During the school year, there are lessons in swing dancing from 7pm to 8pm every Thursday in the 5th floor dance room in Willard Straight Hall. Lessons assume no prior experience in lindy hop swing dancing and they're very beginner friendly. Afterwards, there will be a social dance from 8pm to 9pm where you can practice your newly learned moves. We hope you come join us!</p>
+    </div>
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>
     </footer>

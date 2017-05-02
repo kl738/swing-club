@@ -27,9 +27,11 @@
     
     
     ?>
-    
+    <div class="container-fluid">
+        <h1>E-Board Members</h1>
+    </div>
     <footer id="footer" class="container-fluid text-center">
-        <?php require_once 'php/footer.php'; echo $footer?>
+        <?php include 'php/footer.php'; ?>
     </footer>
 
 </body>

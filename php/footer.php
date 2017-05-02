@@ -1,37 +1,49 @@
-<?php
-$footer = '
-        <div id="contact" class="container-fluid">
-            <h2 class="text-center">CONTACT</h2>
+
+        <div class="footer">
             <div class="row">
-                <div class="col-sm-5">
-                    <p>Site Map</p>
-                    <a href="index.php">Home</a><br>
-                    <a href="#">E-board members</a><br>
-                    <a href="#">History</a><br>
-                    <a href="#">Code of Etiquette</a><br>
-                    <a href="#">FAQ</a><br>
-                    <a href="#">Calendar</a><br>
-                    <a href="#">Class</a><br>
-                    <a href="gallery.php">Gallery</a><br>
-                    <a href="#">Suggestion</a><br>
-                    <a href="#">Contact Info</a><br>
+                <div class="col-sm-3">
+                    <h4>Site Map</h4>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="eboard.php">E-board members</a></li>
+                        <li><a href="history.php">History</a></li>
+                        <li><a href="codeofet.php">Code of Etiquette</a></li>
+                        <li><a href="faq.php">FAQ</a></li>
+                        <li><a href="calendar.php">Calendar</a></li>
+                        <li><a href="class.php">Class</a></li>
+                        <li><a href="gallery.php">Gallery</a><br></li>
+                        <li><a href="suggestion.php">Suggestion</a></li>
+                        <li><a href="contactinfo.php">Contact Info</a></li>
+                        <li><a href="login.php">Login</a></li>
+
+                    </ul>
                 </div>
-                <div class="col-sm-7 slideanim">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                        </div>
-                    </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <button class="btn btn-default pull-right" type="submit">Send</button>
-                        </div>
-                    </div>
+                <div class="col-sm-3">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Join the Mailing List</h4>
+                    <form action="" method="post" id="mailinglist" name="mailinglist" class="validate" >
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" value="" tabindex="1" required />
+
+
+                        <label for="name">Email:</label>
+                        <input type="text" name="email" id="email" value="" tabindex="1" required />
+                        
+
+                        <input type="submit" value="Submit" class="button" />
+                        
+                    </form>
                 </div>
             </div>
-        </div>'
-?>
+        </div>
