@@ -100,27 +100,12 @@
         <h3>CLASSES</h3>
         <p>We hold weekly club meetings on the 5th floor dance space in Willard Straight Hall. Lessons are every Thursday from 7-8pm, and afterwards there will be an open dance from 8-9pm.</p>
         <h3>DANCES</h3>
-        <p>Friday, May 12, 2017. Join the Cornell Swing Dance Club for a night of dancing, fun, and all that jazz!
-        This is CSDC's final dance of the year and we are joined by our very own CU Jazz Band! All of our dances are fun, but this one especially. Imagine a dimly lit room, a jazz band jamming, and your closest friends dancing like it don't mean a thing if it ain't got that swing. </p>
-
-        <p>Don't know how to dance? No problem. We will have a beginner LESSON at the beginning to teach you the very basics and make sure you have a good time.
-
-        Like to compete? Got you covered. We will have a Jack and Jill swing dance (Lindy Hop) competition! All levels are welcome to enter. Everyone will be randomly paired with a partner and dance for glory, honor, and PRIZES.</p>
-
-        <p>Attire is as jazzy, dapper, and as comfortably as you'd like it to be. Snacks and refreshments will be provided.</p>
-
-       
-        <ul>
-          <li>Who: This event is open to the public ( students and non-students)</li>
-          <li>When: Friday, May 12th</li>
-          <li>Time: Lesson at 7pm. Dancing to live band from 8pm-10pm.</li>
-          <li>Where: Lincoln Hall B20</li>
-          <li>Parking: Available in the nearby Architecture Lot</li>
-          <li>Price: $7 for the non-students. $5 suggested donation for students. (Tickets avaiable at the door. Cash or venmo accepted).</li>
-        </ul>
+        <p>There are a few big dances featuring the Cornell Jazz Band and the Syncopators each semester. If you don't know how to dance, no problem. There will always be beginner lessons beforehand to make sure you have a good time. Check the Event Calendar page for more information.</p>
+        
     </div>
 
-
+   <!--  TODO: here we'll query the Photo database to display three random images. placeholder images are set for now. 
+    Very similar to gallery.  -->
     <div id="gallery" class="container-fluid text-center bg-grey">
         <h2>GALLERY</h2><br>
         <div class="row text-center">
@@ -153,33 +138,6 @@
         <?php include 'php/footer.php'; ?>
     </footer>
 
-
-
-    <!-- Add Google Maps
-    <div id="googleMap" style="height:400px;width:100%;"></div>
-    <script>
-        function myMap() {
-            var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-            var mapProp = {
-                center: myCenter,
-                zoom: 12,
-                scrollwheel: false,
-                draggable: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-   -->
-    <!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 </body>
 
