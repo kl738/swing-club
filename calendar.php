@@ -19,7 +19,7 @@
     <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-    
+
     //To display edit options
     //if(isset($_SESSION['user'])){}
     
