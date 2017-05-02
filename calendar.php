@@ -19,19 +19,18 @@
     <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-    
-    
+
     //To display edit options
     //if(isset($_SESSION['user'])){}
     
-    
-    
     ?>
-    
-    <footer id="footer" class="container-fluid text-center">
-        <?php require_once 'php/footer.php'; echo $footer?>
-    </footer>
-
+        <div id="calendar" class="container-fluid text-center">
+            <iframe src="https://calendar.google.com/calendar/embed?src=cornell.edu_5j7aiojrga961lq77qp9jfpvec%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <footer id="footer" class="container-fluid text-center">
+               <?php require_once 'php/footer.php'; echo $footer?>
+        </footer>
+        
 </body>
 
 </html>
