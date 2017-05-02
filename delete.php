@@ -27,14 +27,14 @@
             $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
             $nameEboard = filter_input(INPUT_GET, 'nameEboard', FILTER_SANITIZE_STRING);
             $numPhoto = filter_input(INPUT_GET, 'image_id', FILTER_SANITIZE_NUMBER_INT);
-            $numSugg = filter_input(INPUT_GET, 'image_id', FILTER_SANITIZE_NUMBER_INT);
+            $sug_id = filter_input(INPUT_GET, 'sug_id', FILTER_SANITIZE_NUMBER_INT);
             
             echo "<p>$nameEboard</p>";
             
             if(isset($_SESSION['user'])){
             
                 
-              
+              //delete eboard member
             if(!empty($nameEboard)){    
             $sql = 'SELECT * FROM EBoard WHERE name = ?;';
                 $stmt = $mysqli->stmt_init();
@@ -110,6 +110,42 @@
                     
                     
                 }// the close of deleting image
+                
+                if (!empty($sug_id)){
+                
+                $result = $mysqli->query("select * from Suggestion WHERE id = $sug_id;");    
+                $row = $result->fetch_assoc();
+                $text = $row['text'];
+                    
+                if(isset($_POST['delete'])){
+                    
+                    //delete the album from Album table
+                    $sql = "Delete from Suggestion WHERE id = $sug_id ;";
+                    $mysqli->query($sql);
+                    
+                    
+                
+                    print "Suggestion '$text' has been successfully deleted!";
+                
+                }    
+                
+                
+                
+                else{    
+                    print "<h3>Are you sure you want to delete the suggestion '$text'?</h3>";
+                    print "<form method = 'post'>";
+                    print "<input type = 'submit' name = 'delete' value = 'Yes, please delete it immediately!'>";
+                    print "</form>";
+                    print "<h3>If you don't want to delete this, you can simply just leave this page.</h3>";
+                }
+                    
+                    
+                    
+                }// the close of deleting suggestion
+                
+                
+                
+                
                 
             }// the close of if (isset(session[user]))
             
