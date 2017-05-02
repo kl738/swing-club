@@ -15,18 +15,108 @@
 </head>
 
 <body id="myPage">
-    <?php require_once 'php/nav.php'; echo $nav?>
-    <?php 
-    require_once 'php/config.php'; 
-    $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-    
-    
-    //To display edit options
-    //if(isset($_SESSION['user'])){}
     
     
     
-    ?>
+    <?php
+        
+        require_once "php/config.php";
+        $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+        
+        $username = filter_input( INPUT_POST, 'username', FILTER_SANITIZE_STRING );
+        $password = filter_input( INPUT_POST, 'password', FILTER_SANITIZE_STRING );
+            
+        $sql = 'SELECT * FROM Users WHERE username = ? ;';
+        
+        
+        $stmt = $mysqli->stmt_init();
+        $login = false;
+            
+            
+            
+            
+        //to update the horizontal nav_bar
+        if(isset($_POST['username'])&&isset($_POST['password'])){
+            
+            
+            if($stmt->prepare($sql)){
+            $stmt->bind_param('s', $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            
+            $hash = $row['hashpassword'];
+                
+               
+            if($username == $row['username'] && password_verify($password, $hash ))
+                {$_SESSION['user'] = $username;
+                $login = true;}
+            }
+        }
+        ?>
+            
+        <div id='container' >
+            
+        <?php include 'php/nav.php'; ?>
+            
+
+      
+        
+        
+        <div  class="container-fluid">
+            
+            
+            
+            <?php 
+            
+            
+		
+            //only show the form when neither value is set.
+            if(!isset($_POST['username']) || !isset($_POST['password'])){
+            ?>
+            <form method = "post">
+            
+            Username: <input type="text" name="username"> <br/><br/>
+                
+            Password: <input type="password" name="password"> <br/><br/>
+                
+            <input type="submit" name = 'submit' value="Submit">
+                
+            
+            </form>  
+            <?php
+            }
+            
+            
+            else{
+                
+                
+                
+         
+                if($login)
+                    
+                {echo "$username, you have logged in successfully!";}
+                
+                else{
+                    print "Invalid username or passward!";
+                }
+            }
+            ?>
+            
+       
+     
+                
+                
+               
+        
+        </div>    <!--end of middle div-->  
+    </div>    <!--end of container div--> 
+    
+    
+    
+    
+    
+    
     
     <footer id="footer" class="container-fluid text-center">
         <?php require_once 'php/footer.php'; echo $footer?>

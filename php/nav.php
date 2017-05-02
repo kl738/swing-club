@@ -39,7 +39,7 @@
                     <?php }else{ ?>
     
     
-                    <li><a href="login.php">LOGIN</a></li>
+                    <li><a href="login.php">ADMIN LOGIN</a></li>
                     <?php } ?>
                     
                     
@@ -47,5 +47,5 @@
             </div>
         </div>
     </nav>
-?>
+
 
