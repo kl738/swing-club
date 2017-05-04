@@ -27,8 +27,12 @@
                    
             
             $result = $mysqli->query($sql);
+            print('<div class="row">');
+            $i=1;
             while ($row = $result->fetch_assoc()) {
-				    
+				 
+                print('<div class="col-md-4 col-centered">');
+
                     print("<div class = imgDiv>");
                     
                     $index = $row['photoID'];
@@ -42,14 +46,14 @@
                         print( "<span class = 'imgList'><a href='$href' title='$href'>Edit</a></span>" );
 					  
                         $href = "delete.php?image_id=$index";
-                        print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");
-                        
-                        
+                        print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");   
                     }         
-  		
 				    print("</div>"); 
+                print("</div>");
+                if ( $i % 3 === 0 ) { echo '</div><div class="row">';
+                i++;
             }
-    
+            print('</div>');
     
     
     //form for add photo
