@@ -50,8 +50,8 @@
                     }         
 				    print("</div>"); 
                 print("</div>");
-                if ( $i % 3 === 0 ) { echo '</div><div class="row">';
-                i++;
+                if ( $i % 3 === 0 ) { echo '</div><div class="row">';};
+                $i++;
             }
             print('</div>');
     
