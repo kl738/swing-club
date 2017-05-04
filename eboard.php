@@ -40,13 +40,18 @@
                    
             
             $result = $mysqli->query($sql);
+            print('<div class="eboard">');
+            print('<div class="row">');
+            $i=1;
             while ($row = $result->fetch_assoc()) {
 				    
+                print('<div class="col-md-6 col-centered">');
+
                     print("<div class = imgDiv>");
                     
                     
                     $name = $row[ 'name' ];
-			        print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+			        print( "<img src = images/{$row[ 'path' ]}  alt = 'image'>" );
                     print( "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>" );
                     print( "<span class = 'imgList'>Year: {$row[ 'year' ]}</span>" );
                     print( "<span class = 'imgList'>Description: {$row[ 'description' ]}</span>" );
@@ -63,10 +68,13 @@
                     }         
   		
 				    print("</div>"); 
+                print("</div>");
+                if ( $i % 2 === 0 ) { echo '</div><div class="row">';};
+                $i++;
             }
-    
-    
-    
+            print('</div>');
+            print('</div>');
+        
     //form for add photo
     if(isset($_SESSION['user'])){
     

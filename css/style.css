@@ -49,8 +49,6 @@ input{
     padding-left: 30px;
     display: inline-block;
     text-align: center;
-    
-    
 }
 
 
@@ -58,6 +56,13 @@ input{
 .img {
     width: 300px;
     height: 200px;
+    padding: 1px;
+    background-color: #b31b1b;
+    border: 3px solid #b31b1b;
+}
+.eboard img{
+    max-width: 300px;
+    max-height: 500px;
     padding: 1px;
     background-color: #b31b1b;
     border: 3px solid #b31b1b;
