@@ -154,7 +154,7 @@
             
             // not authorized to use this page
             else{
-                print "You must be logged in as an admin to use this feature";
+                print "You must be logged in as an admin to use this feature!";
             } 
               
             

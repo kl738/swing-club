@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -109,26 +110,19 @@
     <div id="gallery" class="container-fluid text-center bg-grey">
         <h2>GALLERY</h2><br>
         <div class="row text-center">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/Example_pic1.jpg" width="400" height="300">
-                    <p><strong>Practice</strong></p>
-                    <p>Yes, we practice.</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/Example_pic2.jpg" width="400" height="300">
-                    <p><strong>Showcase</strong></p>
-                    <p>Yes, we perform.</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/Example_pic3.jpg" width="400" height="300">
-                    <p><strong>Contest</strong></p>
-                    <p>Yes, we win contest.</p>
-                </div>
+            <div class="slideshow">
+                <?php
+                require_once 'php/config.php'; 
+                $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+                $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null;';
+                $result = $mysqli->query($sql);
+             
+                while ($row = $result->fetch_assoc()) {
+                    print ("<a href='gallery.php' class = 'slideLink'><img class='mySlides' src=images/{$row['path']} alt='slideshow'></a>");
+                }
+               
+                
+                ?>
             </div>
         </div><br>
 

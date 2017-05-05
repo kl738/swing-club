@@ -27,6 +27,17 @@
                 </div>
                 <div class="col-sm-4">
                     <h4>Join the Mailing List</h4>
+                    
+                    <?php if(isset($_SESSION["user"])){  ?>
+    
+                    <li><a href="mailinglist.php">View Mailing List</a></li>
+    
+                    <?php }else{ ?>
+    
+    
+                    
+                    
+                    
                     <form action="" method="post" id="mailinglist" name="mailinglist" class="validate" >
                         Name:<br>
                         <input type="text" name="name" id="name" value="" tabindex="1" required /><br>
@@ -36,19 +47,35 @@
                         <input type="text" name="email" id="email" value="" tabindex="1" required /><br><br>
                         
 
-                        <input type="submit" value="Submit" class="button"  />
+                        <input type="submit" value="Submit" class="button" name="submit"  />
                         
                     </form>
+                    
+                    
                 </div>
                 <?php
-        
-                if(!empty($_POST['name'])&&!empty($_POST['email'])&&isset($_POST['submit'])) {  
-            
+                require_once 'php/config.php'; 
+                $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+                
+                
+
                 $name = filter_input( INPUT_POST, 'name', FILTER_SANITIZE_STRING );
                 $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL );
+            
+                if (!preg_match("/^[a-zA-Z ]*$/",$name)) { //credit to https://www.w3schools.com/php/php_form_url_email.asp
+                    print "Only letters and white space allowed";
+                }
+                
+                else if (!filter_var($email, FILTER_VALIDATE_EMAIL)&&!empty($_POST['email'])) {
+                    print "Invalid email format";
+                }
+                
+                else if($email !=""&&isset($_POST['submit'])){  
+            
+                    
+                    
         
-        
-                $sql = "INSERT INTO Malinglist (email, name) VALUES ";               
+                    $sql = "INSERT INTO Mailinglist (email, name) VALUES ";               
                     $sql .= "('$email', '$name')";
                     $sql .= ";";
                     $mysqli->query($sql);
@@ -56,7 +83,7 @@
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
                     else{
-                        print "<p>Thanks for subscripting to our mailing list!</p>";
+                        print "Thanks for subscripting to our mailing list!";
                     }
                     
                     
@@ -64,6 +91,9 @@
                     
                     
                 }
+            }
+                
+              
                 
         
         
