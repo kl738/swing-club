@@ -4,7 +4,7 @@ body {
     color: #818181;
 }
 h1{
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Arial", Arial, sans-serif;
     color: #303030;
 }
 h2 {
@@ -214,7 +214,7 @@ input{
     line-height: 1.42857143 !important;
     letter-spacing: 4px;
     border-radius: 0;
-    font-family: "Times New Roman", times, serif;
+    font-family: Montserrat, sans-serif;
 }
 
 .navbar li a,
