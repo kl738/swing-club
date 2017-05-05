@@ -1,5 +1,5 @@
 body {
-    font: 400 15px "Times New Roman", Times, serif;
+    font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
 }
@@ -98,7 +98,7 @@ input{
     background-color: #b31b1b;
     color: #fff;
     padding: 50px 25px;
-    font-family: "Times New Roman", times, serif;
+    font-family: Montserrat, sans-serif;
 }
 
 .container-fluid {
