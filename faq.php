@@ -32,7 +32,7 @@
         <div class="questions">
            
                 <div class="item">
-                        <h3>Q: When are the classes?</h3>A: We teach classes every Thursday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.
+                        <h3>Q: When are the classes?</h3><p>A: We teach classes every Thursday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</p>
                     </div>
                 <div class="item">
                         <h3>Q: Where are the classes?</h3><p>A: The classes take place in the 5th floor dance room in Willard Straight Hall.</p>

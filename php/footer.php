@@ -31,7 +31,7 @@
                     <?php if(isset($_SESSION["user"])){  ?>
     
                     <li><a href="mailinglist.php">View Mailing List</a></li>
-    
+                    <li><a href="getemails.php">Download Mailing List</a></li>
                     <?php }else{ ?>
     
     
