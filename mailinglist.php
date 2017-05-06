@@ -25,6 +25,7 @@
     ?>
     <div class="container-fluid">
         <h1>Mailing List</h1>
+        <a href='getcsv.php'><p>Click to download to spreadsheet</p></a>
         <?php
         
         if(isset($_SESSION['user'])){
