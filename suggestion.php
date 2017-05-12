@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body id="myPage">
@@ -76,7 +77,9 @@
         <p>Please enter your suggestions for the Swing Dance Club here. Suggestions will be anonymous, and we will take them into consideration for making the club more enjoyable for everyone.</p>
         <form method="post">
              <textarea rows="2" cols="25" placeholder="This is the default text" class="suggestionbox" name="suggestion" required></textarea><br>
+             <div class="g-recaptcha" data-sitekey="6LcOLCEUAAAAAEeEvCotQe_VMYQnVfAthJlwWZPm"></div>
              <input type="submit" value="Submit" class="button" />
+
         </form>
         
         <?php
