@@ -15,10 +15,41 @@
 </head>
 
 <body id="myPage">
+    <div id='nav'>
     <?php include 'php/nav.php'; ?>
+    </div>
+
     <div class="container-fluid bg-grey">
         <h1>Gallery</h1>
     </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script>
+    var modal = document.getElementById('myModal');
+
+    var modalImg = document.getElementById("imgModal");
+    var captionText = document.getElementById("modalCaption");
+    var navBar = document.getElementById("nav")
+
+    function showModal(imgSrc, imgCaption){
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+        nav.style.display = "none";
+        //captionText.innerHTML = imgCaption;
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() { 
+        modal.style.display = "none";
+        nav.style.display = "block";
+    }
+    </script>
+
     <div class="container-fluid">
     <?php 
     require_once 'php/config.php'; 
@@ -39,7 +70,7 @@
                     
                     $index = $row['photoID'];
                     
-			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'></div>" );
+			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image' onclick='showModal(this.src,this.alt)'></div>" );
                     print( "<div class = 'captionContainer'><span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
                     print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span></div>" );
                     
