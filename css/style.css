@@ -1,10 +1,10 @@
 body {
-    font: 400 15px Lato, sans-serif;
+    font: 400 15px "Times New Roman", Times, serif;
     line-height: 1.8;
     color: #818181;
 }
 h1{
-    font-family: Montserrat, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     color: #303030;
 }
 h2 {
@@ -98,7 +98,7 @@ input{
     background-color: #b31b1b;
     color: #fff;
     padding: 50px 25px;
-    font-family: Montserrat, sans-serif;
+    font-family: "Times New Roman", times, serif;
 }
 
 .container-fluid {
@@ -212,9 +212,9 @@ input{
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
-    letter-spacing: 2.5px;
+    letter-spacing: 4px;
     border-radius: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: "Times New Roman", times, serif;
 }
 
 .navbar li a,

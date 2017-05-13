@@ -1,7 +1,7 @@
 
         <div class="footer">
             <div class="row">
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Site Map</h4>
                     <ul>
                         <li><a href="index.php">Home</a></li>
@@ -19,13 +19,13 @@
                     </ul>
                 </div>
               
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Links</h4>
                     <ul>
                         <li><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Join the Mailing List</h4>
                     
                     <?php if(isset($_SESSION["user"])){  ?>
