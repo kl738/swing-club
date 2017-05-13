@@ -42,11 +42,18 @@ input{
     height: 300px;
     width: 100%;
 }
+
+
 .imgDiv{
     width: 90%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 50px;
+}
+
+.eboard .imgDiv {
+    width: 75%;
+    margin-bottom: 60px;
 }
 
 .mySlides{
@@ -86,11 +93,8 @@ input{
 
 
 .eboard img{
-    max-width: 300px;
-    max-height: 500px;
-    padding: 1px;
-    background-color: #b31b1b;
-    border: 3px solid #b31b1b;
+    max-width: 100%;
+    max-height: 100%;
 }
 .imgList {
     display: block;
