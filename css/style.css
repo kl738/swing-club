@@ -43,12 +43,10 @@ input{
     width: 100%;
 }
 .imgDiv{
-    padding-top: 20px;
-    vertical-align: top;
-    width: 100%;
-    padding-left: 30px;
-    display: inline-block;
-    text-align: center;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 50px;
 }
 
 .mySlides{
@@ -79,13 +77,11 @@ input{
 .imgContainer {
     width: 100%;
     height: 100%;
-    padding: 1px;
-    background-color: #bbbbbb;
-    border: 5px solid #bbbbbb;
 }
 
 .captionContainer {
-    background-color: #eeeeee;
+     text-align: center;
+    padding: 10px 20px;
 }
 
 

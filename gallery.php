@@ -16,8 +16,10 @@
 
 <body id="myPage">
     <?php include 'php/nav.php'; ?>
+    <div class="container-fluid bg-grey">
+        <h1>Gallery</h1>
+    </div>
     <div class="container-fluid">
-        <h1>Gallery</h1><br>
     <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
