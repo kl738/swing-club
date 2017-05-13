@@ -13,7 +13,7 @@ $(document).ready(function() { //credit to http://www.w3schools.com/w3css/w3css_
             myIndex = 1
         }
         x[myIndex - 1].style.display = "block";
-        setTimeout(carousel, 2500);
+        setTimeout(carousel, 5000);
     }
     
     
