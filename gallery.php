@@ -17,7 +17,7 @@
 <body id="myPage">
     <?php include 'php/nav.php'; ?>
     <div class="container-fluid">
-        <h1>Gallery</h1>
+        <h1>Gallery</h1><br>
     <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
@@ -37,9 +37,9 @@
                     
                     $index = $row['photoID'];
                     
-			        print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
-                    print( "<span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
-                    print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span>" );
+			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'></div>" );
+                    print( "<div class = 'captionContainer'><span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
+                    print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span></div>" );
                     
                     if(isset($_SESSION['user'])){
 					    $href = "edit.php?image_id=$index";
