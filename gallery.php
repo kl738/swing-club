@@ -54,12 +54,74 @@
     <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+    // get album id from the url
+    if(!empty($_GET['albumid']))        
+        $albumid = filter_input(INPUT_GET, 'albumid', FILTER_SANITIZE_NUMBER_INT);
+    else
+        $albumid = 0;
+   
+        
+    // The dropdown selection for the album
+    print "Select album: &nbsp;&nbsp; <select name='album' onChange='location = this.value;'>";
     
+    print "<option value='gallery.php?albumid=0'>Default</option>";
+    print "<option value='gallery.php?albumid=0'>All photos</option>";
+    $sql = 'SELECT * from Album;';
+    $result = $mysqli->query($sql);    
+    while ($row = $result->fetch_assoc()) {
+        
+        print "<option value='gallery.php?albumid={$row[ 'albumID' ]}'>{$row[ 'name' ]}</option>";
+        
+    }
+    print "</select>";
+    // end of the dropdown menu of album
+        
+        
+    //Display all photos
+    if($albumid==0){
+        print "<h1 class='container-fluid text-center'>All photos</h1>";
+        $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null;';
+        $result = $mysqli->query($sql);
+        
+            print('<div class="row">');
+            $i=1;
+            while ($row = $result->fetch_assoc()) {
+				 
+                print('<div class="col-md-4 col-centered">');
+
+                    print("<div class = imgDiv>");
+                    
+                    $index = $row['photoID'];
+                    
+			        print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+                    print( "<span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
+                    print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span>" );
+                    
+                    if(isset($_SESSION['user'])){
+					    $href = "edit.php?image_id=$index";
+                        print( "<span class = 'imgList'><a href='$href' title='$href'>Edit</a></span>" );
+					  
+                        $href = "delete.php?image_id=$index";
+                        print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");   
+                    }         
+				    print("</div>"); 
+                print("</div>");
+                if ( $i % 3 === 0 ) { echo '</div><div class="row">';};
+                $i++;
+            }
+            print('</div>');
+    }
     
-    $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null;';
-                   
-            
-            $result = $mysqli->query($sql);
+    //show different album
+    else{
+        
+        $sql = "SELECT name from Album where albumID = $albumid;";
+        $result = $mysqli->query($sql);
+        $row = $result->fetch_assoc();
+        print "<h1 class='container-fluid text-center'>{$row['name']}</h1>";
+        $sql = "SELECT Photo.photoID, path, credit, caption, Relation.albumID FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID inner join Relation ON Relation.photoID = Photo.photoID where EBoard.photoID is null and albumID = {$albumid};";
+        $result = $mysqli->query($sql);
+        
             print('<div class="row">');
             $i=1;
             while ($row = $result->fetch_assoc()) {
@@ -87,6 +149,9 @@
                 $i++;
             }
             print('</div>');
+        
+        
+    }
     
     
     //form for add photo
@@ -100,6 +165,24 @@
             Caption: <input type="text" name="caption"> <br><br>
                 
             Credit URL: <input type="text" name="credit"> <br><br>  
+            
+            Album(s):&nbsp;
+            
+        <?php
+        
+            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+            $result = $mysqli->query("Select * From Album where name!='All photos';");
+            while ($row = $result->fetch_assoc()) {
+            $id = $row['albumID'];
+            print( "<input type='checkbox' name='albumChosen[]' value='$id'>&nbsp;{$row['name']} &nbsp;" );
+            
+        }
+            
+            
+            
+        ?>
+            
+            Add New Album: <input type="text" name="albumName">
                 
             <p>
 				<label>Image upload: </label>
@@ -117,6 +200,12 @@
         
         
     <?php } 
+        
+                if(!empty($_POST['albumName'])&&$_POST['albumName']!=""){
+                    $albumname = filter_input( INPUT_POST, 'albumName', FILTER_SANITIZE_STRING );
+                    $result = $mysqli->query("Insert INTO Album (name) VALUES ('$albumname');");
+                    print "Album has been added successfully! You may need to refresh to see the changes.";
+                }
         
            
                 
@@ -155,8 +244,42 @@
                     
                     else 
 					   print("<p>Error: The file $originalName was not uploaded.</p>");
+                    
+                    
                     //insert the relation into the realtion database if there is any.
                     
+                    
+                    if(!empty($_POST['albumChosen'])){
+                        
+                        
+                        //get the created image ID
+                    
+                        $result = $mysqli->query("select * from Photo WHERE path = '$originalName'");
+                    
+                        if(mysql_errno())
+                            echo "MySQL error ".mysql_errno();
+                    
+                        $row = $result->fetch_assoc();
+                        $imageIndex = $row['photoID'];
+                    
+                    
+                    
+                    
+                        
+                        $albumChosen = $_POST['albumChosen'];
+                        
+                        foreach($albumChosen as $index){
+                            
+                            
+                            
+                        $sql = "INSERT INTO Relation (albumID, photoID) VALUES ";
+                        $sql.= "($index, $imageIndex);";
+                        $mysqli->query($sql);
+                        if(mysql_errno())
+                            echo "MySQL error ".mysql_errno();
+                        
+                        }
+                    }
              
                 }
  
