@@ -27,10 +27,11 @@
     
     
     ?>
-    <div class="container-fluid">
+    <div class="container-fluid bg-grey">
         <h1>E-Board Members</h1>
+    </div>
         
-        
+    <div class="container-fluid">
         <?php 
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
@@ -51,8 +52,8 @@
                     
                     
                     $name = $row[ 'name' ];
-			        print( "<img src = images/{$row[ 'path' ]}  alt = 'image'>" );
-                    print( "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>" );
+			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]}  alt = 'image'></div>" );
+                    print( "<div class = 'captionContainer'><span class = 'imgList'>Name: {$row[ 'name' ]}</span>" );
                     print( "<span class = 'imgList'>Year: {$row[ 'year' ]}</span>" );
                     print( "<span class = 'imgList'>Description: {$row[ 'description' ]}</span>" );
                     
@@ -67,7 +68,7 @@
                         
                     }         
   		
-				    print("</div>"); 
+				    print("</div></div>"); 
                 print("</div>");
                 if ( $i % 2 === 0 ) { echo '</div><div class="row">';};
                 $i++;

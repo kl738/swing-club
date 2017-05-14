@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
         <div class="footer">
             <div class="row">
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Site Map</h4>
                     <ul>
                         <li><a href="index.php">Home</a></li>
@@ -19,18 +21,22 @@
                     </ul>
                 </div>
               
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Links</h4>
                     <ul>
-                        <li><a href="https://www.facebook.com/groups/2370182392/">Cornell Swing Facebook</a></li>
+
+                        <li><a href="https://www.facebook.com/groups/2370182392/" class="fa fa-facebook"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
+                        <br>
+                        <li><a class="fa fa-twitter"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Twitter</a></li>
+                        <br>
+                        <li><a class="fa fa-vimeo"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Vimeo</a></li>
+                
                         <li><a href="http://ithacaswing.org">Ithaca Swing Dance Network</a></li>
                         <li><a href="http://www.groovejuiceswing.com">Groove Juice Swing</a></li>
                         <li><a href="http://www.ithaca.edu/orgs/icswingdanceclub/">Ithaca College Swing</a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4 centered">
+                <div class="col-sm-4">
                     <h4>Join the Mailing List</h4>
                     
                     <?php if(isset($_SESSION["user"])){  ?>

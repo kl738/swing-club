@@ -1,6 +1,4 @@
-<?php session_start();
-        
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +16,10 @@
 
 <body id="myPage">
     <?php 
-        include 'php/nav.php';
-        require_once 'php/config.php'; 
-        $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-        
+    include 'php/nav.php';
+    require_once 'php/config.php'; 
+    $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+
     ?>
     <div class="container-fluid">
         <h1>Mailing List</h1>
@@ -29,13 +27,14 @@
         <?php
         
         if(isset($_SESSION['user'])){
+         
             
             $sql = 'SELECT * from Mailinglist;';
                    
             
             $result = $mysqli->query($sql);
             while ($row = $result->fetch_assoc()) {
-
+				    
                     print("<div class = item>");
                     
                     
@@ -52,8 +51,7 @@
 				    print("</div>"); 
             }
             
-            
-             
+       
         
         }
         

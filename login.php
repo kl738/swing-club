@@ -22,37 +22,39 @@
         
         require_once "php/config.php";
         $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-        
-        $username = filter_input( INPUT_POST, 'username', FILTER_SANITIZE_STRING );
-        $password = filter_input( INPUT_POST, 'password', FILTER_SANITIZE_STRING );
-            
-        $sql = 'SELECT * FROM Users WHERE username = ? ;';
-        
-        
-        $stmt = $mysqli->stmt_init();
+  
         $login = false;
+    
+    
+    
+        if(!empty($_POST['username'])&&!empty($_POST['password'])){
+            $username = filter_input( INPUT_POST, 'username', FILTER_SANITIZE_STRING );
+            $password = filter_input( INPUT_POST, 'password', FILTER_SANITIZE_STRING );
             
             
-            
-            
-        //to update the horizontal nav_bar
-        if(isset($_POST['username'])&&isset($_POST['password'])){
-            
-            
-            if($stmt->prepare($sql)){
-            $stmt->bind_param('s', $username);
-            $stmt->execute();
-            $result = $stmt->get_result();
+            $result = $mysqli->query('SELECT * FROM Users;');
             $row = $result->fetch_assoc();
             
             $hash = $row['hashpassword'];
-                
-               
-            if($username == $row['username'] && password_verify($password, $hash ))
-                {$_SESSION['user'] = $username;
-                $login = true;}
+            $hashuser = $row['username']; 
+        
+        
+    
+    
+    
+        if(password_verify($username, $hashuser)&& password_verify($password, $hash )){
+                $_SESSION['user'] = $username;
+                $login = true;
             }
+                
         }
+                
+            
+            
+            
+            
+ 
+       
         ?>
             
         <div id='container' >
@@ -71,15 +73,16 @@
             <?php 
             
             
+            
 		
             //only show the form when neither value is set.
             if(!isset($_POST['username']) || !isset($_POST['password'])){
             ?>
             <form method = "post">
             
-            Username: <input type="text" name="username"> <br/><br/>
+            Username: <input type="text" name="username" required> <br/><br/>
                 
-            Password: <input type="password" name="password"> <br/><br/>
+            Password: <input type="password" name="password" required> <br/><br/>
                 
             <input type="submit" name = 'submit' value="Submit">
                 
@@ -91,16 +94,19 @@
             
             else{
                 
+            
+            if($login)
+                    echo "$username, you have logged in successfully!";
                 
-                
-         
-                if($login)
-                    
-                {echo "$username, you have logged in successfully!";}
-                
-                else{
+                else
                     print "Invalid username or passward!";
-                }
+            
+         
+            
+           
+        
+            
+                
             }
             ?>
             
