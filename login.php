@@ -33,7 +33,7 @@
             
             
             $result = $mysqli->query('SELECT * FROM Users;');
-            $row = $result->fetch_assoc();
+        while($row = $result->fetch_assoc()){
             
             $hash = $row['hashpassword'];
             $hashuser = $row['username']; 
@@ -46,7 +46,8 @@
                 $_SESSION['user'] = $username;
                 $login = true;
             }
-                
+            
+        }
         }
                 
             

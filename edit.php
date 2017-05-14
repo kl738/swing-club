@@ -32,7 +32,17 @@
                  
             if(!empty($nameEboard)) {
                 
-                
+            //Get photoID
+                $sql = 'SELECT EBoard.photoID, path, year, description, name FROM EBoard inner join Photo on EBoard.photoID = Photo.photoID WHERE name = ?;';
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('s', $nameEboard);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+                $row = $result->fetch_assoc();
+                $photoID = $row[ 'photoID' ];
                 
                 
             
@@ -46,14 +56,13 @@
                 
                 //check for empty value+ change text&num datafield
                 if(!empty($post_year)&&!empty($post_description)){
-                
-                    $sql = "Update EBoard Set year =? , description = ? WHERE name ='$nameEboard' ";
+//sql1
+                    $sql = "Update EBoard Set year =? , description = ? WHERE name = ? ";
                     $stmt = $mysqli->stmt_init();
                     if($stmt->prepare($sql)){
-                        $stmt->bind_param('is', $post_year, $post_description);
+                        $stmt->bind_param('iss', $post_year, $post_description, $nameEboard);
                         $stmt->execute();
                         $result = $stmt->get_result();
-                    
                     }
                     
                     //change photo if uploaded
@@ -67,10 +76,17 @@
 					    move_uploaded_file($tempName, "images/$originalName");
                         
                        
-                        
-                        $sql = "Update Photo Set path='$originalName' WHERE photoID = $photoID;";
-                        $mysqli->query($sql);
+//sql2
+                        $sql = "Update Photo Set path=? WHERE photoID=?;";
+                        $stmt = $mysqli->stmt_init();
+                        if($stmt->prepare($sql)){
+                            $stmt->bind_param('si', $originalName, $photoID);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
                         }
+                        
+                        
+                    }
                         
                         
                         
@@ -92,7 +108,8 @@
                 
                 
                 
-            // displaying a form for user the enter input.    
+            // displaying a form for user the enter input.  
+//sql3
             $sql = 'SELECT EBoard.photoID, path, year, description, name FROM EBoard inner join Photo on EBoard.photoID = Photo.photoID WHERE name = ?;';
                 $stmt = $mysqli->stmt_init();
                 if($stmt->prepare($sql)){
@@ -149,20 +166,29 @@
                 
                 //check for empty value
                 if(!empty($post_caption)&&!empty($post_credit)){
-                
-                    $sql = "Update Photo Set caption =? , credit = ? WHERE photoID = $numPhoto ";
+//sql4
+                    $sql = "Update Photo Set caption =? , credit = ? WHERE photoID = ? ";
                     $stmt = $mysqli->stmt_init();
                     if($stmt->prepare($sql)){
-                        $stmt->bind_param('ss', $post_caption, $post_credit);
+                        $stmt->bind_param('ssi', $post_caption, $post_credit, $numPhoto);
                         $stmt->execute();
                         
                     }
                     
-                    $mysqli->query("Delete from Relation WHERE photoID = $numPhoto;");
+//sql4.5
+                    $sql = "Delete from Relation WHERE photoID = ?;";
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('i', $numPhoto);
+                        $stmt->execute();
+                        
+                    }
+                    
                     
                     if(!empty($_POST['albumChosen'])){
                     $albumChosen = $_POST['albumChosen'];
                     foreach($albumChosen as $index){
+//sql5
                     $sql = "INSERT INTO Relation (albumID, photoID) VALUES ";
                     $sql.= "($index, $numPhoto);";
                     $mysqli->query($sql);
@@ -187,7 +213,8 @@
                 
                 
                 
-            // displaying a form for user the enter input.    
+            // displaying a form for user the enter input.   
+//sql6
                 $sql = 'SELECT * FROM Photo WHERE photoID = ?;';
                 $stmt = $mysqli->stmt_init();
                 if($stmt->prepare($sql)){
@@ -217,7 +244,17 @@
             print "Add to album: ";
             
             $inAlbum = [];
-            $result = $mysqli->query("Select albumID from Relation WHERE photoID = $numPhoto;");
+//sql7
+                
+            $sql = "Select albumID from Relation WHERE photoID = ?;";
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('i', $numPhoto);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+            
             while($row = $result->fetch_assoc()){
                 $inAlbum[] = $row['albumID'];
             }

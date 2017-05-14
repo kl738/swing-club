@@ -52,12 +52,23 @@
                 if(isset($_POST['delete'])){
                     
                     //delete the member from EBoard table
-                    $sql = "Delete from EBoard WHERE name = $name ;";
-                    $mysqli->query($sql);
-                    
+                    $sql = 'Delete from EBoard WHERE name = ?;';
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('s', $name);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                  
                     //delete the photo of the member
-                    $sql = "Delete from Photo WHERE photoID = $photo ;";
-                    $mysqli->query($sql);
+                    $sql = 'Delete from Photo WHERE photoID = ? ;';
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('i', $photo);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                    
                 
                     print "EBoard member '$name' has been successfully deleted!";
                 
@@ -81,17 +92,40 @@
 //To delete an image
                 if (!empty($numPhoto)){
                 
-                $result = $mysqli->query("select * from Photo WHERE photoID = $numPhoto;");    
+                $sql = 'select * from Photo WHERE photoID = ?;';
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('i', $numPhoto);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+               
+                    
+                
                 $row = $result->fetch_assoc();
                 $caption = $row['caption'];
                     
                 if(isset($_POST['delete'])){
                     
-                    //delete the album from Album table
-                    $sql = "Delete from Photo WHERE photoID = $numPhoto ;";
-                    $mysqli->query($sql);
-                    $sql = "Delete from Relation WHERE photoID = $numPhoto ;";
-                    $mysqli->query($sql);
+                    //delete the photo from Photo table
+                    $sql = 'Delete from Photo WHERE photoID = ? ;';
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('i', $numPhoto);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                    
+                    //delete this photo relation from Relation table
+                    
+                    $sql = 'Delete from Relation WHERE photoID = ? ;';
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('i', $numPhoto);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
                     
                     
                 
@@ -115,16 +149,30 @@
                 
                 if (!empty($sug_id)){
                 
-                $result = $mysqli->query("select * from Suggestion WHERE id = $sug_id;");    
+                $sql = 'select * from Suggestion WHERE id = ?;';
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('i', $sug_id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+                
+                    
                 $row = $result->fetch_assoc();
                 $text = $row['text'];
                     
                 if(isset($_POST['delete'])){
                     
-                    //delete the album from Album table
-                    $sql = "Delete from Suggestion WHERE id = $sug_id ;";
-                    $mysqli->query($sql);
+                    //delete the suggestion from Suggestion table
                     
+                    $sql = 'Delete from Suggestion WHERE id = ? ;';
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('i', $sug_id);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
                     
                 
                     print "Suggestion '$text' has been successfully deleted!";

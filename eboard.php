@@ -36,7 +36,7 @@
     require_once 'php/config.php'; 
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
     
-    
+//sql1
     $sql = 'SELECT * FROM EBoard inner join Photo on Photo.photoID=EBoard.photoID;';
                    
             
@@ -76,7 +76,7 @@
             print('</div>');
             print('</div>');
         
-    //form for add photo
+    //form for add new member
     if(isset($_SESSION['user'])){
     
     ?>
@@ -95,7 +95,12 @@
 				<input id="newImage" type="file" name="newImage" accept=".jpg, .jpeg, .png">
 				
 			</p>
-                
+            
+            Username: <input type="text" name="username" required> <br><br>
+            
+            Password: <input type="password" name="password" required> <br><br>
+            
+            Confirm passowrd: <input type="password" name="confirm_password" required> <br><br>
             
             
             <input type="submit" name = 'submit' value="Submit">
@@ -107,10 +112,13 @@
         
     <?php } 
         
-           
+                function validate_user($str) 
+                    {return preg_match('/^[a-zA-Z0-9_]{6,30}$/',$str);}
+        
+                
                 
                 //add image to database
-                if(isset($_POST["submit"]) and !empty( $_FILES['newImage'])){
+                if(isset($_POST["submit"])){
  
 				        
 				    
@@ -120,10 +128,18 @@
                     $description =  filter_input( INPUT_POST, 'description', FILTER_SANITIZE_STRING );
                     $newImage = $_FILES['newImage'];
 				    $originalName = $newImage['name'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $re_password = $_POST['confirm_password'];
+                    
+                    
+                    
+                    
+             
+                    
                     
                     //check for empty value
-                    if(!empty($name)&&!empty($description)&&$year>=1920&&$year<=2030)
-                    {
+                    if(!empty($name)&&!empty($description)&&$year>=1920&&$year<=2030&&validate_user($username)&&$re_password==$password&&$_FILES['newImage']['error']!=UPLOAD_ERR_NO_FILE){
                         
                     
 				    if ( $newImage['error'] == 0 ) {
@@ -132,11 +148,17 @@
 					   move_uploaded_file($tempName, "images/$originalName");
 					
 					   
-                    
-                    $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";               
-                    $sql .= "('$name','$originalName','$name')";
-                    $sql .= ";";
-                    $mysqli->query($sql);
+//sql2  
+                    $sql = "INSERT INTO Photo (caption, path, credit) VALUES (?,?,?)";
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('sss', $name, $originalName, $name);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                                   
+                   
+          
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
@@ -145,19 +167,45 @@
                     
                     }
                         
+                    $hashuser = password_hash($username, PASSWORD_DEFAULT);
+                    $hashpassword = password_hash($password, PASSWORD_DEFAULT);
+                        
+                    //add new user into the Users table
+//sql3
+                    $sql = "INSERT INTO Users (username, hashpassword, name) VALUES (?,?,?) ";
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('sss', $hashuser, $hashpassword, $name);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }    
+                        
                     //Getting the photoID for creating an entry in Eboard
-                    $result = $mysqli->query("select * from Photo WHERE path = '$originalName'");
+//sql4  
+                    $sql = "select * from Photo WHERE path =?;";
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('s', $originalName);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                    
                     
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
                     
                     $row = $result->fetch_assoc();
                     $index = $row['photoID']; 
-                    
-                    $sql = "INSERT INTO EBoard (name, photoID, year, description) VALUES ";               
-                    $sql .= "('$name','$index','$year','$description')";
-                    $sql .= ";";
-                    $mysqli->query($sql);
+//sql5
+                    $sql = "INSERT INTO EBoard (name, photoID, year, description) VALUES (?,?,?,?);";
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('siis', $name, $index, $year, $description);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                                   
+                  
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
@@ -169,7 +217,7 @@
                     
                     
                     else 
-					   print("<p>Error: The file $originalName was not uploaded due to invalid input.</p>");
+					   print("<p>Error: The file $originalName was not uploaded due to invalid input. Username must be between 6-30 characters long and it can only contain alphanumeric character and underscore.</p>");
                     
                     
                     

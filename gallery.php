@@ -68,6 +68,7 @@
     
     print "<option value='gallery.php?albumid=0'>Default</option>";
     print "<option value='gallery.php?albumid=0'>All photos</option>";
+//sql1
     $sql = 'SELECT * from Album;';
     $result = $mysqli->query($sql);    
     while ($row = $result->fetch_assoc()) {
@@ -82,6 +83,7 @@
     //Display all photos
     if($albumid==0){
         print "<h1 class='container-fluid text-center'>All photos</h1>";
+//sql2
         $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null;';
         $result = $mysqli->query($sql);
         
@@ -116,13 +118,29 @@
     
     //show different album
     else{
+//sql3
+        $sql = "SELECT name from Album where albumID = ?;";   
+        $stmt = $mysqli->stmt_init();
+        if($stmt->prepare($sql)){
+            $stmt->bind_param('i', $albumid);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        }
         
-        $sql = "SELECT name from Album where albumID = $albumid;";
-        $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();
         print "<h1 class='container-fluid text-center'>{$row['name']}</h1>";
-        $sql = "SELECT Photo.photoID, path, credit, caption, Relation.albumID FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID inner join Relation ON Relation.photoID = Photo.photoID where EBoard.photoID is null and albumID = {$albumid};";
-        $result = $mysqli->query($sql);
+//sql4
+        $sql = "SELECT Photo.photoID, path, credit, caption, Relation.albumID FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID inner join Relation ON Relation.photoID = Photo.photoID where EBoard.photoID is null and albumID = ?;"; 
+        $stmt = $mysqli->stmt_init();
+        if($stmt->prepare($sql)){
+            $stmt->bind_param('i', $albumid);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        }
+        
+        
+        
+        
         
             print('<div class="row">');
             $i=1;
@@ -158,15 +176,26 @@
         
         
         if(!empty($_POST['albumName'])&&$_POST['albumName']!=""){
+            
+            
+            
                     $albumname = filter_input( INPUT_POST, 'albumName', FILTER_SANITIZE_STRING );
-                    $result = $mysqli->query("Insert INTO Album (name) VALUES ('$albumname');");
+//sql5
+                    $sql = "Insert INTO Album (name) VALUES (?);"; 
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('s', $albumname);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    }
+                    
                     print "Album has been added successfully! ";
-                }
+        }
         
            
                 
                 //add image to database
-                if(isset($_POST["submit"]) and !empty( $_FILES['newImage'])){
+                if(isset($_POST["submit"])&&$_FILES['newImage']['error']!=UPLOAD_ERR_NO_FILE){
  
 				        $newImage = $_FILES['newImage'];
 				        $originalName = $newImage['name'];
@@ -187,11 +216,16 @@
                     //check for empty value
                     if(!empty($caption)&&!empty($credit)&& $newImage['error'] == 0)
                     {
+//sql6
+                        $sql = "INSERT INTO Photo (caption, path, credit) VALUES (?,?,?);";    
+                        $stmt = $mysqli->stmt_init();
+                        if($stmt->prepare($sql)){
+                        $stmt->bind_param('sss', $caption, $originalName, $credit);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        } 
                     
-                    $sql = "INSERT INTO Photo (caption, path, credit) VALUES ";               
-                    $sql .= "('$caption','$originalName','$credit')";
-                    $sql .= ";";
-                    $mysqli->query($sql);
+                    
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
@@ -209,8 +243,15 @@
                         
                         
                         //get the created image ID
-                    
-                        $result = $mysqli->query("select * from Photo WHERE path = '$originalName'");
+//sql7
+                        $sql = "select * from Photo WHERE path = ?;";    
+                        $stmt = $mysqli->stmt_init();
+                        if($stmt->prepare($sql)){
+                        $stmt->bind_param('s', $originalName);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        }
+                       
                     
                         if(mysql_errno())
                             echo "MySQL error ".mysql_errno();
@@ -225,9 +266,10 @@
                         $albumChosen = $_POST['albumChosen'];
                         
                         foreach($albumChosen as $index){
+                        
                             
-                            
-                            
+                        
+//sql8  
                         $sql = "INSERT INTO Relation (albumID, photoID) VALUES ";
                         $sql.= "($index, $imageIndex);";
                         $mysqli->query($sql);
@@ -256,7 +298,7 @@
             
         <?php
         
-            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+//sql9
             $result = $mysqli->query("Select * From Album where name!='All photos';");
             while ($row = $result->fetch_assoc()) {
             $id = $row['albumID'];

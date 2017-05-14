@@ -83,18 +83,22 @@
                 
                 else if($email !=""&&isset($_POST['submit'])){  
             
+                    $sql = "INSERT INTO Mailinglist (email, name) VALUES (?,?);";  
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('ss', $email, $name);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
                     
+                    }    
                     
         
-                    $sql = "INSERT INTO Mailinglist (email, name) VALUES ";               
-                    $sql .= "('$email', '$name')";
-                    $sql .= ";";
-                    $mysqli->query($sql);
+                    
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
                     else{
-                        print "Thanks for subscripting to our mailing list!";
+                        print "Thanks for subscribing to our mailing list!";
                     }
                     
                     

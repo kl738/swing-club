@@ -84,22 +84,38 @@
         
         <?php
         
-        if(!empty($_POST['suggestion'])) {  
+        if(!empty($_POST['suggestion'])&&isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) { 
+            
+            $secret = '6LcOLCEUAAAAAEeEvCotQe_VMYQnVfAthJlwWZPm';
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+            $responseData = json_decode($verifyResponse);
+            
+            
+            
             
             $suggestion = filter_input( INPUT_POST, 'suggestion', FILTER_SANITIZE_STRING );
         
-        
-            $sql = "INSERT INTO Suggestion (text) VALUES ";               
-                    $sql .= "('$suggestion')";
-                    $sql .= ";";
-                    $mysqli->query($sql);
+            $sql = "INSERT INTO Suggestion (text) VALUES (?);";    
+                    $stmt = $mysqli->stmt_init();
+                    if($stmt->prepare($sql)){
+                        $stmt->bind_param('s', $suggestion);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                    
+                    } 
+                    
              
                     if(mysql_errno())
                         echo "MySQL error ".mysql_errno();
                     else{
                         print "<p>Thanks for your suggestion!</p>";
                     }
+            
         }
+            
+            else{
+                print "Please verify you are not a robot!";
+            }
         }
         
         
