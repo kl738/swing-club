@@ -93,8 +93,8 @@
                     
                     $index = $row['photoID'];
                     
-			        print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
-                    print( "<span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
+			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image' onclick='showModal(this.src,this.alt)'></div>" );
+                    print( "<div class = 'captionContainer'><span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
                     print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span>" );
                     
                     if(isset($_SESSION['user'])){
@@ -104,7 +104,7 @@
                         $href = "delete.php?image_id=$index";
                         print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");   
                     }         
-				    print("</div>"); 
+				    print("</div></div>"); 
                 print("</div>");
                 if ( $i % 3 === 0 ) { echo '</div><div class="row">';};
                 $i++;
@@ -134,7 +134,7 @@
                     
 			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image' onclick='showModal(this.src,this.alt)'></div>" );
                     print( "<div class = 'captionContainer'><span class = 'imgList'>Caption: {$row[ 'caption' ]}</span>" );
-                    print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span></div>" );
+                    print( "<span class = 'imgList'>Credit to: {$row[ 'credit' ]}</span>" );
                     
                     if(isset($_SESSION['user'])){
 					    $href = "edit.php?image_id=$index";
@@ -143,7 +143,7 @@
                         $href = "delete.php?image_id=$index";
                         print("<span class = 'imgList'><a href='$href' title='$href'>Delete</a></span>");   
                     }         
-				    print("</div>"); 
+				    print("</div></div>"); 
                 print("</div>");
                 if ( $i % 3 === 0 ) { echo '</div><div class="row">';};
                 $i++;
