@@ -1,14 +1,11 @@
 body {
-    font: 400 15px "Times New Roman", Times, serif;
+    font: 400 15px Lato, serif;
     line-height: 1.8;
     color: #818181;
 }
 h1{
-<<<<<<< HEAD
-    font-family: "Times New Roman", Times, serif;
-=======
-    font-family: "Arial", Arial, sans-serif;
->>>>>>> parent of 62d2cf7... font
+
+    font-family: Montserrat, sans-serif;
     color: #303030;
 }
 h2 {
@@ -172,7 +169,7 @@ input{
     background-color: #b31b1b;
     color: #fff;
     padding: 50px 25px;
-    font-family: "Times New Roman", times, serif;
+    font-family: Lato, serif;
 }
 
 .container-fluid {
@@ -286,9 +283,9 @@ input{
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
     border-radius: 0;
-    font-family: "Times New Roman", times, serif;
+    font-family: Lato, serif;
 }
 
 .navbar li a,
