@@ -90,6 +90,8 @@
                     //delete the album from Album table
                     $sql = "Delete from Photo WHERE photoID = $numPhoto ;";
                     $mysqli->query($sql);
+                    $sql = "Delete from Relation WHERE photoID = $numPhoto ;";
+                    $mysqli->query($sql);
                     
                     
                 

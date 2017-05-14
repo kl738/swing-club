@@ -49,6 +49,8 @@
         nav.style.display = "block";
     }
     </script>
+    
+    
 
     <div class="container-fluid">
     <?php 
@@ -152,59 +154,13 @@
         
         
     }
-    
-    
-    //form for add photo
-    if(isset($_SESSION['user'])){
-    
-    ?>
-        
-        
-        <h1>Add photos</h1>
-        <form method = "post" enctype="multipart/form-data">
-            Caption: <input type="text" name="caption"> <br><br>
-                
-            Credit URL: <input type="text" name="credit"> <br><br>  
-            
-            Album(s):&nbsp;
-            
-        <?php
-        
-            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-            $result = $mysqli->query("Select * From Album where name!='All photos';");
-            while ($row = $result->fetch_assoc()) {
-            $id = $row['albumID'];
-            print( "<input type='checkbox' name='albumChosen[]' value='$id'>&nbsp;{$row['name']} &nbsp;" );
-            
-        }
-            
-            
-            
-        ?>
-            
-            Add New Album: <input type="text" name="albumName">
-                
-            <p>
-				<label>Image upload: </label>
-				<input id="newImage" type="file" name="newImage" accept=".jpg, .jpeg, .png">
-				
-			</p>
-                
-            
-            
-            <input type="submit" name = 'submit' value="Submit">
-            </form>   
         
         
         
-        
-        
-    <?php } 
-        
-                if(!empty($_POST['albumName'])&&$_POST['albumName']!=""){
+        if(!empty($_POST['albumName'])&&$_POST['albumName']!=""){
                     $albumname = filter_input( INPUT_POST, 'albumName', FILTER_SANITIZE_STRING );
                     $result = $mysqli->query("Insert INTO Album (name) VALUES ('$albumname');");
-                    print "Album has been added successfully! You may need to refresh to see the changes.";
+                    print "Album has been added successfully! ";
                 }
         
            
@@ -282,8 +238,54 @@
                     }
              
                 }
- 
+    
+    
+    //form for add photo
+    if(isset($_SESSION['user'])){
+    
+    ?>
+        
+        
+        <h1>Add photos</h1>
+        <form method = "post" enctype="multipart/form-data">
+            Caption: <input type="text" name="caption"> <br><br>
+                
+            Credit URL: <input type="text" name="credit"> <br><br>  
+            
+            Album(s):&nbsp;
+            
+        <?php
+        
+            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+            $result = $mysqli->query("Select * From Album where name!='All photos';");
+            while ($row = $result->fetch_assoc()) {
+            $id = $row['albumID'];
+            print( "<input type='checkbox' name='albumChosen[]' value='$id'>&nbsp;{$row['name']} &nbsp;" );
+            
+        }
+            
+            
+            
         ?>
+            
+            Add New Album: <input type="text" name="albumName">
+                
+            <p>
+				<label>Image upload: </label>
+				<input id="newImage" type="file" name="newImage" accept=".jpg, .jpeg, .png">
+				
+			</p>
+                
+            
+            
+            <input type="submit" name = 'submit' value="Submit">
+            </form>   
+        
+        
+        
+        
+        
+    <?php } ?>
     
     </div>
     <footer id="footer" class="container-fluid text-center">

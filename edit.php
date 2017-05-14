@@ -32,44 +32,7 @@
                  
             if(!empty($nameEboard)) {
                 
-                $sql = 'SELECT EBoard.photoID, path, year, description, name FROM EBoard inner join Photo on EBoard.photoID = Photo.photoID WHERE name = ?;';
-                $stmt = $mysqli->stmt_init();
-                if($stmt->prepare($sql)){
-                    $stmt->bind_param('s', $nameEboard);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    
-                }
-                $row = $result->fetch_assoc();
-                $year = $row['year'];
-                $description = $row['description'];
-                $name =$row[ 'name' ];  
-                $photoID = $row[ 'photoID' ]; 
                 
-            print("<div class = imgDiv>");
-            print("<form method = 'post' enctype='multipart/form-data'>");
-                
-			 
-            
-            print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
-                
-            
-            print "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>";
-			print "Year: <input type='number' min = '1920' max = '2030' name='year' value = '$year'> <br><br>";
-                    
-            print "Description: <input type='text' name='description' value = '$description'> <br><br>";
-                
-              
-            print "<p>";
-				print "<label>Image upload(leave blank if no changes): </label>";
-				print "<input id='newImage' type='file' name='newImage' accept='.jpg, .jpeg, .png'>";
-				
-			print "</p>";
-                
-            print "<input type = 'submit' name = 'save' value = 'Save'>";
-                
-            print("</form>");
-            print("</div>");
                 
                 
             
@@ -130,7 +93,44 @@
                 
                 
             // displaying a form for user the enter input.    
+            $sql = 'SELECT EBoard.photoID, path, year, description, name FROM EBoard inner join Photo on EBoard.photoID = Photo.photoID WHERE name = ?;';
+                $stmt = $mysqli->stmt_init();
+                if($stmt->prepare($sql)){
+                    $stmt->bind_param('s', $nameEboard);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                }
+                $row = $result->fetch_assoc();
+                $year = $row['year'];
+                $description = $row['description'];
+                $name =$row[ 'name' ];  
+                $photoID = $row[ 'photoID' ]; 
+                
+            print("<div class = imgDiv>");
+            print("<form method = 'post' enctype='multipart/form-data'>");
+                
+			 
             
+            print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+                
+            
+            print "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>";
+			print "Year: <input type='number' min = '1920' max = '2030' name='year' value = '$year'> <br><br>";
+                    
+            print "Description: <input type='text' name='description' value = '$description'> <br><br>";
+                
+              
+            print "<p>";
+				print "<label>Image upload(leave blank if no changes): </label>";
+				print "<input id='newImage' type='file' name='newImage' accept='.jpg, .jpeg, .png'>";
+				
+			print "</p>";
+                
+            print "<input type = 'submit' name = 'save' value = 'Save'>";
+                
+            print("</form>");
+            print("</div>");
                 
             
             }
@@ -156,6 +156,19 @@
                         $stmt->bind_param('ss', $post_caption, $post_credit);
                         $stmt->execute();
                         
+                    }
+                    
+                    $mysqli->query("Delete from Relation WHERE photoID = $numPhoto;");
+                    
+                    if(!empty($_POST['albumChosen'])){
+                    $albumChosen = $_POST['albumChosen'];
+                    foreach($albumChosen as $index){
+                    $sql = "INSERT INTO Relation (albumID, photoID) VALUES ";
+                    $sql.= "($index, $numPhoto);";
+                    $mysqli->query($sql);
+                    if(mysql_errno())
+                        echo "MySQL error ".mysql_errno();
+                    }
                     }
                     
                     
@@ -200,6 +213,26 @@
                 
                     
             print "Credit to: <input type='text' name='credit' value = '$credit'> <br><br>";
+                
+            print "Add to album: ";
+            
+            $inAlbum = [];
+            $result = $mysqli->query("Select albumID from Relation WHERE photoID = $numPhoto;");
+            while($row = $result->fetch_assoc()){
+                $inAlbum[] = $row['albumID'];
+            }
+                
+                
+                
+            $result = $mysqli->query("Select * from Album");    
+            while($row = $result->fetch_assoc()){
+                
+                $id = $row['albumID'];
+                if(in_array($id,$inAlbum))
+                    print( "<input type='checkbox' name='albumChosen[]' value='$id' checked = 'checked'>{$row['name']} " );
+                else
+                    print( "<input type='checkbox' name='albumChosen[]' value='$id'>{$row['name']} " );
+            }
             
             
                 
