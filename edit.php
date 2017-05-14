@@ -112,10 +112,10 @@
                 
 			 
             
-            print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+            print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'></div>" );
                 
             
-            print "<span class = 'imgList'>Name: {$row[ 'name' ]}</span>";
+            print "<div class = 'captionContainer'><span class = 'imgList'>Name: {$row[ 'name' ]}</span>";
 			print "Year: <input type='number' min = '1920' max = '2030' name='year' value = '$year'> <br><br>";
                     
             print "Description: <input type='text' name='description' value = '$description'> <br><br>";
@@ -130,7 +130,7 @@
             print "<input type = 'submit' name = 'save' value = 'Save'>";
                 
             print("</form>");
-            print("</div>");
+            print("</div></div>");
                 
             
             }
@@ -200,7 +200,7 @@
             $row = $result->fetch_assoc();
             print("<div class = imgDiv>");
                 
-            print( "<img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'>" );
+            print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]} class = 'img' alt = 'image'></div>" );
             
             print("</br>");
             print("<form method = 'post'>");
@@ -209,7 +209,7 @@
 			$caption = $row['caption'];
             $credit = $row['credit'];
             
-			print "Caption: <input type='text' name='caption' value = '$caption'> <br><br>";
+			print "<div class = 'captionContainer'>Caption: <input type='text' name='caption' value = '$caption'> <br><br>";
                 
                     
             print "Credit to: <input type='text' name='credit' value = '$credit'> <br><br>";
@@ -229,9 +229,9 @@
                 
                 $id = $row['albumID'];
                 if(in_array($id,$inAlbum))
-                    print( "<input type='checkbox' name='albumChosen[]' value='$id' checked = 'checked'>{$row['name']} " );
+                    print( "&nbsp;<input type='checkbox' name='albumChosen[]' value='$id' checked = 'checked'>{$row['name']}&nbsp;" );
                 else
-                    print( "<input type='checkbox' name='albumChosen[]' value='$id'>{$row['name']} " );
+                    print( "&nbsp;<input type='checkbox' name='albumChosen[]' value='$id'>{$row['name']}&nbsp;" );
             }
             
             
@@ -241,7 +241,7 @@
                 
             print "<br><br><input type = 'submit' name = 'save' value = 'Save'>";      
             print("</form>");
-            print("</div>");
+            print("</div></div>");
                 
                 
                 

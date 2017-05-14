@@ -55,7 +55,7 @@
 			        print( "<div class = 'imgContainer'><img src = images/{$row[ 'path' ]}  alt = 'image'></div>" );
                     print( "<div class = 'captionContainer'><span class = 'imgList'>Name: {$row[ 'name' ]}</span>" );
                     print( "<span class = 'imgList'>Year: {$row[ 'year' ]}</span>" );
-                    print( "<span class = 'imgList'>Description: {$row[ 'description' ]}</span></div>" );
+                    print( "<span class = 'imgList'>Description: {$row[ 'description' ]}</span>" );
                     
                     if(isset($_SESSION['user'])){
                         
@@ -68,7 +68,7 @@
                         
                     }         
   		
-				    print("</div>"); 
+				    print("</div></div>"); 
                 print("</div>");
                 if ( $i % 2 === 0 ) { echo '</div><div class="row">';};
                 $i++;
