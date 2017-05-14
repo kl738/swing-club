@@ -4,7 +4,11 @@ body {
     color: #818181;
 }
 h1{
+<<<<<<< HEAD
     font-family: "Times New Roman", Times, serif;
+=======
+    font-family: "Arial", Arial, sans-serif;
+>>>>>>> parent of 62d2cf7... font
     color: #303030;
 }
 h2 {
