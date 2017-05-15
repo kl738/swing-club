@@ -30,6 +30,7 @@
                         <li><a class="fa fa-twitter"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Twitter</a></li>
                         <br>
                         <li><a class="fa fa-vimeo"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Vimeo</a></li>
+                        <br>
                 
                         <li><a href="http://ithacaswing.org">Ithaca Swing Dance Network</a></li>
                         <li><a href="http://www.groovejuiceswing.com">Groove Juice Swing</a></li>
