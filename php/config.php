@@ -11,5 +11,5 @@ define('DB_USER', "fp_lkr");
 define('DB_PASSWORD', "5p^?L=-dLeKRpSWM"); 
 
 
-define('DB_NAME', 'info230_SP17_fp_lkr');    
+define('DB_NAME', 'info230_sp17_fp_lkr');    
 ?>
