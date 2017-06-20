@@ -78,7 +78,9 @@
         <p>Please enter your suggestions for the Swing Dance Club here. Suggestions will be anonymous, and we will take them into consideration for making the club more enjoyable for everyone.</p>
         <form method="post">
              <textarea rows="2" cols="25" placeholder="This is the default text" class="suggestionbox" name="suggestion" required></textarea><br>
-             <div class="g-recaptcha" data-sitekey="6LcOLCEUAAAAAEeEvCotQe_VMYQnVfAthJlwWZPm"></div>
+             <!-- <div class="g-recaptcha" data-sitekey="6LcOLCEUAAAAAEeEvCotQe_VMYQnVfAthJlwWZPm"></div> -->
+             <!-- Above is for local host and course server. Below is for cuswing.com -->
+             <div class="g-recaptcha" data-sitekey="6Lf2MCYUAAAAAHiWzUyOxVhL_w8BNOtGY9eL0Hmd"></div>
              <input type="submit" value="Submit" class="button" />
 
         </form>
