@@ -26,12 +26,7 @@
                     <ul>
 
                         <li><a href="https://www.facebook.com/groups/2370182392/" class="fa fa-facebook"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
-                        <br>
-                        <li><a class="fa fa-twitter"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Twitter</a></li>
-                        <br>
-                        <li><a class="fa fa-vimeo"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a>Vimeo</a></li>
-                        <br>
-                
+    
                         <li><a href="http://ithacaswing.org">Ithaca Swing Dance Network</a></li>
                         <li><a href="http://www.groovejuiceswing.com">Groove Juice Swing</a></li>
                         <li><a href="http://www.ithaca.edu/orgs/icswingdanceclub/">Ithaca College Swing</a></li>
