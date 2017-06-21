@@ -13,6 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato" rel="stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" sizes="144x144" href="images/apple-icon-144x144.png">
 </head>
 
 <body id="myPage">

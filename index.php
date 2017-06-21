@@ -14,6 +14,8 @@
     <script src="js/scripts.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato" rel="stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" sizes="144x144" href="images/apple-icon-144x144.png">
 </head>
 
 <body id="myPage">
@@ -26,6 +28,11 @@
     <div class="jumbotron text-center">
         <h1>Cornell Swing Dance Club</h1>
         <br>
+    </div>
+
+    <div class="container-fluid">
+        <h2>Summer 2017</h2><br>
+        <h4>The undergraduate swing dance club is not active during the summer.  Please check back in the fall for when we start back up again!  In the meantime, the graduate swing dance society has meetings every Monday this summer, from 7-9pm in the Big Red Barn.  Check the <a href="calendar.php">calendar</a> or <a href="https://www.facebook.com/groups/1308164735874349/">their facebook page</a> for more info!</h4>
     </div>
 
     <div id="about" class="container-fluid">

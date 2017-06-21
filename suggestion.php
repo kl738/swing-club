@@ -14,6 +14,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato" rel="stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" sizes="144x144" href="images/apple-icon-144x144.png">
 </head>
 
 <body id="myPage">
