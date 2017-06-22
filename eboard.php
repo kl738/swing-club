@@ -18,6 +18,7 @@
 </head>
 
 <body id="myPage">
+    <?php include_once("php/analyticstracking.php"); ?>
     <?php include 'php/nav.php'; ?>
     <?php 
     require_once 'php/config.php'; 

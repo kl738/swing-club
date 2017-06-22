@@ -19,6 +19,7 @@
 </head>
 
 <body id="myPage">
+    <?php include_once("php/analyticstracking.php"); ?>
     <?php include 'php/nav.php'; ?>
 
     <header class="clearfix" style="height: 70vh; background: url(images/theme_pic.png) 

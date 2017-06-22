@@ -18,13 +18,14 @@
 </head>
 
 <body id="myPage">
-    
+        <?php include_once("php/analyticstracking.php"); ?>
    
             
         
         <div  class="container-fluid">
             
         <?php  
+
             include 'php/nav.php'; 
             require_once "php/config.php";
             $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);

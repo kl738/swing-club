@@ -18,6 +18,7 @@
 </head>
 
 <body id="myPage">
+    <?php include_once("php/analyticstracking.php"); ?>
     
     
     

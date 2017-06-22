@@ -18,6 +18,7 @@
 </head>
 
 <body id="myPage">
+    <?php include_once("php/analyticstracking.php"); ?>
     <div id='nav'>
     <?php include 'php/nav.php'; ?>
     </div>
