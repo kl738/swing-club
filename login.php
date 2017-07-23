@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+ini_set('session.save_path', '../sessions/');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,11 +103,17 @@
             else{
                 
             
-            if($login)
+            if($login){
+
+                    // if(isset($_SESSION['user'])){
+                    //     echo 'user isset<br>';
+                    // }
                     echo "$username, you have logged in successfully!";
-                
-                else
+
+                }
+                else{
                     print "Invalid username or passward!";
+                }
             
          
             

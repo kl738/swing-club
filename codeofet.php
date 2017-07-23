@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php ini_set('session.save_path', '../sessions/');
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 

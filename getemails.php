@@ -1,4 +1,5 @@
-<?php
+<?php ini_set('session.save_path', '../sessions/');
+
 	// output headers so that the file is downloaded rather than displayed
 	header('Content-type: text/csv');
 	header('Content-Disposition: attachment; filename="emails.csv"');
