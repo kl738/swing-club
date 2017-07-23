@@ -34,8 +34,8 @@ session_start();?>
     ?>
     <div class="container-fluid">
         <h1>Class</h1>
-        <h3>Every Thursday 7pm at Willard Straight Hall 5th floor.</h3>
-        <p>During the school year, there are lessons in swing dancing from 7pm to 8pm every Thursday in the 5th floor dance room in Willard Straight Hall. Lessons assume no prior experience in lindy hop swing dancing and they're very beginner friendly. Afterwards, there will be a social dance from 8pm to 9pm where you can practice your newly learned moves. We hope you come join us!</p>
+        <h3>Every Tuesday 7pm at Willard Straight Hall Garden Room.</h3>
+        <p>During the school year, there are lessons in swing dancing from 7pm to 8pm every Tuesday in the Garden Room in Willard Straight Hall. To find the Garden Room, enter the left entrance of WSH on Ho Plaza, take a right after walking in, and go down the stairs. Lessons assume no prior experience in lindy hop swing dancing and they're very beginner friendly. Afterwards, there will be a social dance from 8pm to 9pm where you can practice your newly learned moves. We hope you come join us!</p>
     </div>
     <footer id="footer" class="container-fluid text-center">
         <?php include 'php/footer.php'; ?>
