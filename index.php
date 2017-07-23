@@ -70,10 +70,10 @@ session_start();?>
                 
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <h4>Q: When are the classes?<br><br><span>A: We teach classes every Thursday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</span></h4>
+                        <h4>Q: When are the classes?<br><br><span>A: We teach classes every Tuesday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: Where are the classes?<br><br><span>A: The classes take place in the 5th floor dance room in Willard Straight Hall.</span></h4>
+                        <h4>Q: Where are the classes?<br><br><span>A: The classes take place in the Garden Room in Willard Straight Hall. To find the Garden Room, enter the left entrance of WSH on Ho Plaza, take a right after walking in, and go down the stairs.</span></h4>
                     </div>
                     <div class="item">
                         <h4>Q: I'm a complete beginner and have never ever danced in my life. Can I join?<br><br><span>A: Of course! We are open to dancers of all levels, and are very excited when beginners want to learn. </span></h4>
