@@ -32,8 +32,8 @@ session_start();?>
 
         <div id="calendar" class="container-fluid text-center">
             <h1>Calendar of Events</h1>
-            <iframe src="https://calendar.google.com/calendar/embed?src=cornell.edu_5j7aiojrga961lq77qp9jfpvec%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br>
-            <p>Events will be color-coded based on the type of event. For example, there will be a legend for indicating club meetings, big dances, workshops, outside non-Cornell sponsored events. These events will be editable by the Swing Club's Eboard as they can simply edit it on Google Calendar's interface and they will automatically sync to the website. </p>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cornell.edu_vor9h8bj1kvkptt76vb94tt3t4%40group.calendar.google.com&amp;color=%23A32929&amp;src=cornell.edu_8pqii3jrcdpf66i8vfd4qls82c%40group.calendar.google.com&amp;color=%2329527A&amp;src=cornell.edu_svv0pl2i8531i71bohdhsjf2os%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br>
+            <!-- <p>Events are color-coded based on the type of event. They are separated between </p> -->
         </div>
         <footer id="footer" class="container-fluid text-center">
                <?php include 'php/footer.php'; ?>
