@@ -43,7 +43,7 @@ session_start();?>
         <ul>
         <li>Try to follow the Golden Rule: treat others as you wish to be treated.</li>
         <li>Smile.</li>
-        <li>Avoid “offering” unsolicited advice on the dance floor. If the person is engaging in a practice that is potentially injurious or otherwise inappropriate, discretely mention to instructor (or HSDS board member).</li>
+        <li>Avoid “offering” unsolicited advice on the dance floor. If the person is engaging in a practice that is potentially injurious or otherwise inappropriate, discretely mention to instructor (or CSDC board member).</li>
         <li>Teaching on the social dance floor is not appropriate. Exceptions are limited to instructors and designated sessions after class.</li>
         <li>Thank your partner after each dance.</li>
         <li>Swing Dance is a partner dance, but close dancing (AKA, Blues Style Dancing), is not encouraged if the music does not call for it. Be considerate of your partner and give him or her appropriate space.</li>
@@ -63,7 +63,7 @@ session_start();?>
         <h3>What to Do If They Say "No"</h3>
         <p>You can always ask again, but give him or her time and space before doing so. If you are turned down, do not lose heart. All dancers get turned down on occasion but there are plenty of other people that would like to dance with you instead.</p>
         <h3>Dealing With Difficult People</h3>
-        <p>If somebody at an HSDS event makes you feel uncomfortable, please speak with a Board member. If you don't know a Board member, tell the DJ and he or she will get you in touch with a Board member. We will be glad to deal with them in a respectful, non-confrontational manner.</p>
+        <p>If somebody at an CSDC event makes you feel uncomfortable, please speak with a Board member. If you don't know a Board member, tell the DJ and he or she will get you in touch with a Board member. We will be glad to deal with them in a respectful, non-confrontational manner.</p>
         <h3>Closing Thought</h3>
         <p>It is wise to be lighthearted enough to just enjoy the dance regardless of whether or not everyone is at their best etiquette.</p>   
     </div>
