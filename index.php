@@ -79,16 +79,16 @@ session_start();?>
                         <h4>Q: I'm a complete beginner and have never ever danced in my life. Can I join?<br><br><span>A: Of course! We are open to dancers of all levels, and are very excited when beginners want to learn. </span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: Do I need a partner?<br><br><span></span>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </h4>
+                        <h4>Q: Do I need a partner?<br><br><span>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: How much do classes cost?<br><br><span></span>A: The classes we each every Thursday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</h4>
+                        <h4>Q: How much do classes cost?<br><br><span>A: The classes we each every Thursday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: What should I wear to swing dance?<br><br><span></span>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber soles as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </h4>
+                        <h4>Q: What should I wear to swing dance?<br><br><span>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber soles as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: Are there any big dances?<br><br><span></span>A: Yes! We hold a few big dances every semester. Dancers with no experience are encouraged to come as well. We will hold free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</h4>
+                        <h4>Q: Are there any big dances?<br><br><span>A: Yes! We hold a few big dances every semester. Dancers with no experience are encouraged to come as well. We will hold free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</span></h4>
                     </div>
                 </div>
 
