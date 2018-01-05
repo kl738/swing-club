@@ -3,8 +3,8 @@
 
 //Keep this as localhost for the course server and for local server with MAMP
 //using cuswingcom.domaincommysql.com for domain on cuswing.com
-//define('DB_HOST', "cuswingcom.domaincommysql.com");
-define('DB_HOST', "localhost");
+define('DB_HOST', "cuswingcom.domaincommysql.com");
+//define('DB_HOST', "localhost");
 
 define('DB_USER', "fp_lkr");    
  
