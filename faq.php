@@ -37,10 +37,10 @@ session_start();?>
         <div class="questions">
            
                 <div class="item">
-                        <h3>Q: When are the classes?</h3><p>A: We teach classes every Tuesday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</p>
+                        <h3>Q: When are the classes?</h3><p>A: We teach classes every Wednesday from 8:00pm to 9:00pm. Afterwards, from 9:00pm to 10:00pm, there will be an open dance to practice the moves you've learned during class.</p>
                     </div>
                 <div class="item">
-                        <h3>Q: Where are the classes?</h3><p>A: The classes take place in the Garden Room in Willard Straight Hall. To find the Garden Room, enter the left entrance of WSH on Ho Plaza, take a right after walking in, and go down the stairs.</p>
+                        <h3>Q: Where are the classes?</h3><p>A: The classes take place in the 6th floor dance space in Willard Straight Hall.</p>
                     </div>
                 <div class="item">
                         <h3>Q: I'm a complete beginner and have never ever danced in my life. Can I join?</h3><p>A: Of course! We are open to dancers of all levels, and are very excited when beginners want to learn.</p>
@@ -49,13 +49,13 @@ session_start();?>
                         <h3>Q: Do I need a partner?</h3><p>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </p>
                     </div>
                 <div class="item">
-                        <h3>Q: How much do classes cost?</h3><p>A: The classes we each every Thursday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hd workshops, and these will not be free. Check the events page to see when these workshops are!</p>
+                        <h3>Q: How much do classes cost?</h3><p>A: The classes we each every Wednesday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hd workshops, and these will not be free. Check the events page to see when these workshops are!</p>
                     </div>
                 <div class="item">
                         <h3>Q: What should I wear to swing dance? </h3><p>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber ses as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </p>
                     </div>
                 <div class="item">
-                        <h3>Q: Are there any big dances?</h3><p>A: Yes! We hd a few big dances every semester. Dancers with no experience are encouraged to come as well. We will hd free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</p>
+                        <h3>Q: Are there any big dances?</h3><p>A: Yes! We had a few big dances every semester. Dancers with no experience are encouraged to come as well. We will always have free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</p>
                     </div>
             
         </div>

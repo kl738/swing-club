@@ -35,6 +35,9 @@ session_start();?>
     <div class="container-fluid">
         <h1>Contact Info</h1>
         <p>Feel free to reach out to us at club meetings, <a href="https://www.facebook.com/groups/2370182392/">Facebook</a>, or email.</p>
+        <p>Our secretary, Tommi's email is tls237@cornell.edu</p>
+        <p>We now have two Facebook pages. The <a href="https://www.fb.me/cornellswing">Cornell Swing Dance Club</a> contains exclusively events sponsored by the undergraduate club. Find out about swing dance on campus here! The <a href="https://www.facebook.com/groups/2370182392/">Cornell Swing Community</a> should be used as a forum to talk about all things swing. For example, some appropriate topics for discussion include promoting off-campus local swing events, finding rides/carpooling to events, or discussing your favorite swing songs! 
+        <p>Also feel free to leave an anonymous suggestion at our <a href="suggestion.php">suggestion box</a>.</p>
     </div>
     <footer id="footer" class="container-fluid text-center">
         <?php include 'php/footer.php'; ?>

@@ -24,9 +24,8 @@
                 <div class="col-sm-4">
                     <h4>Links</h4>
                     <ul>
-
-                        <li><a href="https://www.facebook.com/groups/2370182392/" class="fa fa-facebook"></a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="https://www.facebook.com/groups/2370182392/">Facebook</a></li>
-    
+                        <li><a href="https://www.fb.me/cornellswing">Cornell Swing Dance Club Facebook</a></li>
+                        <li><a href="https://www.facebook.com/groups/2370182392/">Cornell Swing Community Facebook</a></li>
                         <li><a href="http://ithacaswing.org">Ithaca Swing Dance Network</a></li>
                         <li><a href="http://www.groovejuiceswing.com">Groove Juice Swing</a></li>
                         <li><a href="http://www.ithaca.edu/orgs/icswingdanceclub/">Ithaca College Swing</a></li>
