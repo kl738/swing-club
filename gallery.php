@@ -89,7 +89,7 @@ session_start();?>
     if($albumid==0){
         print "<h1 class='container-fluid text-center'>All photos</h1>";
 //sql2
-        $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null;';
+        $sql = 'SELECT Photo.photoID, path, credit, caption FROM Photo left outer join EBoard on Photo.photoID=EBoard.photoID where EBoard.photoID is null ORDER BY Photo.photoID DESC;';
         $result = $mysqli->query($sql);
         
             print('<div class="row">');

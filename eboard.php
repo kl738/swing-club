@@ -42,7 +42,7 @@ session_start();?>
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
     
 //sql1
-    $sql = 'SELECT * FROM EBoard inner join Photo on Photo.photoID=EBoard.photoID;';
+    $sql = 'SELECT * FROM EBoard inner join Photo on Photo.photoID=EBoard.photoID order by EBoard.photoID ASC;';
                    
             
             $result = $mysqli->query($sql);
