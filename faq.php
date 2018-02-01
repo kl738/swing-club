@@ -49,13 +49,13 @@ session_start();?>
                         <h3>Q: Do I need a partner?</h3><p>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </p>
                     </div>
                 <div class="item">
-                        <h3>Q: How much do classes cost?</h3><p>A: The classes we each every Wednesday at Willard Straight are completely free. Occassionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</p>
+                        <h3>Q: How much do classes cost?</h3><p>A: The classes we teach every Wednesday at Willard Straight are completely free. Occasionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</p>
                     </div>
                 <div class="item">
-                        <h3>Q: What should I wear to swing dance? </h3><p>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber ses as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </p>
+                        <h3>Q: What should I wear to swing dance? </h3><p>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber soles as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </p>
                     </div>
                 <div class="item">
-                        <h3>Q: Are there any big dances?</h3><p>A: Yes! We had a few big dances every semester. Dancers with no experience are encouraged to come as well. We will always have free group lessons before the dance, so that everyone is confortable at the big dance. Check on the events page for more details.</p>
+                        <h3>Q: Are there any big dances?</h3><p>A: Yes! We had a few big dances every semester. Dancers with no experience are encouraged to come as well. We will always have free group lessons before the dance, so that everyone is comfortable at the big dance. Check on the events page for more details.</p>
                     </div>
             
         </div>
