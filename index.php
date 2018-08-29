@@ -65,10 +65,10 @@ session_start();?>
                 
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <h4>Q: When are the classes?<br><br><span>A: We teach classes every Wednesday from 8:00pm to 9:00pm. Afterwards, from 9:00pm to 10:00pm, there will be an open dance to practice the moves you've learned during class.</span></h4>
+                        <h4>Q: When are the classes?<br><br><span>A: We teach classes every Tuesday from 7:00pm to 8:00pm. Afterwards, from 8:00pm to 9:00pm, there will be an open dance to practice the moves you've learned during class.</span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: Where are the classes?<br><br><span>A: The classes take place in the the 6th floor ballroom in Willard Straight Hall.</span></h4>
+                        <h4>Q: Where are the classes?<br><br><span>A: The classes take place in the the 5th floor ballroom in Willard Straight Hall.</span></h4>
                     </div>
                     <div class="item">
                         <h4>Q: I'm a complete beginner and have never ever danced in my life. Can I join?<br><br><span>A: Of course! We are open to dancers of all levels, and are very excited when beginners want to learn. </span></h4>
@@ -77,7 +77,7 @@ session_start();?>
                         <h4>Q: Do I need a partner?<br><br><span>A: No. Lindy Hop swing dancing is in fact a very social dance. We will be rotating through many partners to give you the opportunity to dance with as many people as possible. </span></h4>
                     </div>
                     <div class="item">
-                        <h4>Q: How much do classes cost?<br><br><span>A: The classes we each every Wednesday at Willard Straight are completely free. Occasionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</span></h4>
+                        <h4>Q: How much do classes cost?<br><br><span>A: The classes we each every Tuesday at Willard Straight are completely free. Occasionally, we will invite a famous lindy hopper to Cornell to hold workshops, and these will not be free. Check the events page to see when these workshops are!</span></h4>
                     </div>
                     <div class="item">
                         <h4>Q: What should I wear to swing dance?<br><br><span>A: We recommend that you dress as comfortably as possible. Most often people casually dress in jeans/shorts and a shirt, and some people will choose to dress a bit more formally. It is all up to you! Shoes are very important, and we recommend that you don't wear shoes with rubber soles as they will stick to the floor and prevent movement. High heels also leave the dancer unbalanced. </span></h4>
@@ -104,7 +104,7 @@ session_start();?>
     <div id="events" class="container-fluid text-center">
         <h2>EVENTS</h2>
         <h3>CLASSES</h3>
-        <p>We hold weekly club meetings on the 6th floor dance space in Willard Straight Hall. Lessons are every Wednesday from 8-9pm, and afterwards there will be an open dance from 9-10pm.</p>
+        <p>We hold weekly club meetings on the 5th floor dance space in Willard Straight Hall. Lessons are every Tuesday from 7-8pm, and afterwards there will be an open dance from 8-9pm.</p>
         <h3>DANCES</h3>
         <p>There are a few big dances featuring the Cornell Jazz Band and the Syncopators each semester. If you don't know how to dance, no problem. There will always be beginner lessons beforehand to make sure you have a good time. Check the Event Calendar page for more information.</p>
         
